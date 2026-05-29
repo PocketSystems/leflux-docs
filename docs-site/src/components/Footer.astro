@@ -1,0 +1,53 @@
+---
+// Override Starlight's footer to keep the built-in edit-link / last-updated /
+// pagination, and add a LeFlux + Pocket Systems credit line under it.
+import EditLink from 'virtual:starlight/components/EditLink';
+import LastUpdated from 'virtual:starlight/components/LastUpdated';
+import Pagination from 'virtual:starlight/components/Pagination';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="sl-flex">
+  <div class="meta sl-flex">
+    <EditLink {...Astro.props} />
+    <LastUpdated {...Astro.props} />
+  </div>
+  <Pagination {...Astro.props} />
+  <div class="lfx-credit">
+    © {year} LeFlux · Developed by
+    <a href="https://github.com/PocketSystems" target="_blank" rel="noopener noreferrer">Pocket Systems</a>
+  </div>
+</footer>
+
+<style>
+  footer {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .meta {
+    gap: 0.75rem 3rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+    font-size: var(--sl-text-sm);
+    color: var(--sl-color-gray-3);
+  }
+  .meta > :global(p:only-child) {
+    margin-inline-start: auto;
+  }
+  .lfx-credit {
+    margin: 1rem auto 0.5rem;
+    font-size: var(--sl-text-xs);
+    color: var(--sl-color-gray-3);
+    text-align: center;
+  }
+  .lfx-credit a {
+    color: var(--sl-color-gray-2);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .lfx-credit a:hover {
+    color: var(--sl-color-accent-high);
+  }
+</style>
