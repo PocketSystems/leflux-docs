@@ -1,0 +1,85 @@
+---
+title: LeFlux — give your website hands
+description: An AI agent for any website, not just a chatbot. It reads the page, navigates, fills forms, and books meetings. Universal indexing, knowledge-base aware, multi-language, zero framework lock-in.
+template: splash
+hero:
+  tagline: An AI agent that reads, navigates, fills forms, and acts on any website — not a chatbot that just replies. Universal indexing, knowledge-base aware, multi-language, zero framework lock-in.
+  image:
+    file: ../../assets/logo.svg
+  actions:
+    - text: Quick start
+      link: /docs/getting-started/quick-start/
+      icon: right-arrow
+      variant: primary
+    - text: View on GitHub
+      link: https://github.com/PocketSystems/leflux-docs
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+import Platforms from '../../components/Platforms.astro';
+
+## What is LeFlux?
+
+LeFlux is a JavaScript widget you drop onto any website. Visitors chat in natural language. The agent reads the page, navigates to where the answer lives, fills forms, opens modals, and answers questions from a knowledge base built by crawling your site.
+
+One `<script>` tag. Works on plain HTML, React, Next.js, WordPress, Shopify, Webflow, Framer, anything. No framework lock-in, no styling work, no per-page configuration.
+
+<CardGrid>
+  <Card title="Universal indexing" icon="puzzle">
+    Every interactive element on the page gets a numeric id. The agent references elements by id, not CSS selectors — works on any site without per-tenant rules.
+  </Card>
+  <Card title="Knowledge base" icon="document">
+    A built-in crawler walks your site and builds a knowledge graph. The agent answers from crawled content first, navigates only when needed.
+  </Card>
+  <Card title="Multi-language" icon="translate">
+    Visitor writes in English, Roman Urdu, Hindi, Spanish, Arabic — agent mirrors the language every turn. Detection runs each message, no manual config.
+  </Card>
+  <Card title="Action execution" icon="rocket">
+    Click, type, scroll, navigate, select — five atomic primitives compose into multi-step workflows. SPA-aware (Next.js Link, React Router) so client-side state survives.
+  </Card>
+  <Card title="Form auto-fill" icon="pencil">
+    Detects required fields, asks the visitor for missing values one at a time, then fills + submits in a single atomic sequence. No half-submitted forms.
+  </Card>
+  <Card title="Three layouts" icon="setting">
+    Floating bubble, bottom-bar pill, dockable side panel — pick per-site from the dashboard. Live theme follows your brand color automatically.
+  </Card>
+</CardGrid>
+
+## Install in 30 seconds
+
+```html
+<script src="https://leflux.xrlabs.app/embed.js" async></script>
+```
+
+That's the whole integration. No tokens, no keys, no config. The script auto-detects your site via the browser's Origin header, fetches the per-tenant config (theme, layout, greeting, allowed hosts), and mounts the widget in a shadow DOM so it can't collide with your CSS.
+
+## Works on every platform
+
+Same one line, whatever you built with. We have a guide for each.
+
+<Platforms />
+
+<CardGrid>
+  <LinkCard
+    title="5-minute quick start"
+    href="/docs/getting-started/quick-start/"
+    description="Sign up, register a domain, paste the script, done."
+  />
+  <LinkCard
+    title="Configure from the dashboard"
+    href="/docs/config/dashboard/"
+    description="Brand color, layout, greeting, launcher, nudge, chips."
+  />
+  <LinkCard
+    title="How it works under the hood"
+    href="/docs/getting-started/how-it-works/"
+    description="Universal indexing, iterative loop, knowledge-base injection, action primitives."
+  />
+  <LinkCard
+    title="Full REST + WebSocket API"
+    href="/docs/api/rest/"
+    description="For programmatic integrations, custom event piping, or self-hosting."
+  />
+</CardGrid>

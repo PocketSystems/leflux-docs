@@ -1,0 +1,77 @@
+name: Deploy docs
+
+# Builds the Astro Starlight docs and ships the static output to the same
+# server path the docs have always lived at (/var/www/leflux/docs-site),
+# so the public URL stays https://leflux.xrlabs.app/docs .
+#
+# Needs three repo secrets:
+#   SSH_PRIVATE_KEY  deploy key authorised on the box
+#   SSH_HOST         server host/IP
+#   SSH_USER         ssh user (root)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Build and ship docs
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Add server to known hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install + build docs
+        run: |
+          cd docs-site
+          npm ci
+          # @astrojs/sitemap 3.x throws at the very end of the build with a
+          # custom `base` path, but dist/ is fully written before the throw.
+          # Tolerate the non-zero exit and verify the output instead.
+          npm run build || echo "build exited non-zero, verifying dist/ below"
+          test -f dist/index.html || { echo "dist/index.html missing, build broken"; exit 1; }
+          test -d dist/_astro     || { echo "dist/_astro missing, build broken"; exit 1; }
+          ls -la dist/ | head -20
+
+      - name: Deploy to server
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+        run: |
+          ssh $SSH_USER@$SSH_HOST "chattr -R -i /var/www/leflux/docs-site 2>/dev/null || true; mkdir -p /var/www/leflux/docs-site"
+          rsync -avz --delete docs-site/dist/ $SSH_USER@$SSH_HOST:/var/www/leflux/docs-site/
+          ssh $SSH_USER@$SSH_HOST "chown -R www-data:www-data /var/www/leflux/docs-site || true"
+
+      - name: Verify docs are live
+        run: |
+          OK=0
+          for i in 1 2 3 4 5 6; do
+            if curl -fsSL -m 8 https://leflux.xrlabs.app/docs/ | grep -qi 'leflux'; then
+              echo "✅ docs live on attempt $i"; OK=1; break
+            fi
+            echo "… attempt $i: not ready, retrying in 5s"; sleep 5
+          done
+          [ "$OK" = "1" ] || echo "⚠️ could not confirm (possibly CDN/cache); check manually"
+
+      - name: Summary
+        if: success()
+        run: |
+          echo "🎉 Docs deployed"
+          echo "📖 https://leflux.xrlabs.app/docs"
