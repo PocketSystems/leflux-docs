@@ -22,7 +22,14 @@ export default defineConfig({
       },
       favicon: '/favicon.svg',
       customCss: ['./src/styles/custom.css'],
+      // The docs themselves are open-source (PocketSystems/leflux-docs is a
+      // public repo). The product stays closed-source, but the docs content
+      // welcomes edits, so the repo link + per-page "Edit page" button stay.
       social: {
+        github: 'https://github.com/PocketSystems/leflux-docs',
+      },
+      editLink: {
+        baseUrl: 'https://github.com/PocketSystems/leflux-docs/edit/main/docs-site/',
       },
       lastUpdated: true,
       pagination: true,

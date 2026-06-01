@@ -1,6 +1,9 @@
 ---
-// Override Starlight's footer to keep the built-in last-updated /
+// Override Starlight's footer to keep the built-in edit-page / last-updated /
 // pagination, and add a LeFlux + Pocket Systems credit line under it.
+// EditLink must be rendered here explicitly. Overriding Footer replaces
+// Starlight's default, which is the only place the "Edit page" link lives.
+import EditLink from 'virtual:starlight/components/EditLink';
 import LastUpdated from 'virtual:starlight/components/LastUpdated';
 import Pagination from 'virtual:starlight/components/Pagination';
 
@@ -9,6 +12,7 @@ const year = new Date().getFullYear();
 
 <footer class="sl-flex">
   <div class="meta sl-flex">
+    <EditLink {...Astro.props} />
     <LastUpdated {...Astro.props} />
   </div>
   <Pagination {...Astro.props} />
