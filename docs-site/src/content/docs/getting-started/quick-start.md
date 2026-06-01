@@ -11,7 +11,7 @@ This walks you from zero to a working widget. You'll need a site you control + a
 
 1. **Create your LeFlux account.**
 
-   Go to [leflux.xrlabs.app/signup](https://leflux.xrlabs.app/signup) and sign in. The dashboard opens.
+   Go to [leflux.ai/signup](https://leflux.ai/signup) and sign in. The dashboard opens.
 
 2. **Add your site.**
 
@@ -34,7 +34,7 @@ This walks you from zero to a working widget. You'll need a site you control + a
    Settings → **Install** shows the one-line snippet. It looks like:
 
    ```html
-   <script src="https://leflux.xrlabs.app/embed.js" async></script>
+   <script src="https://leflux.ai/embed.js" async></script>
    ```
 
    That's the entire integration. No tokens, no API keys — the widget identifies your site automatically via the browser's Origin header against the **Allowed hosts** list you set in Settings.

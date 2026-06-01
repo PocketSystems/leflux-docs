@@ -3,7 +3,7 @@ title: Config schema
 description: Per-site config object — every field, every type.
 ---
 
-The site config is stored on Firestore at `sites/{siteId}.config` and surfaced to the widget via the `/api/session/init` response. Every field documented below.
+The site config is stored server-side per site and surfaced to the widget via the `/api/session/init` response. Every field documented below.
 
 ## Top-level shape
 
@@ -80,35 +80,21 @@ Array max length: 5.
 ## Read flow
 
 ```
-Firestore site doc.config
+Server-side site config
    ↓
-server/routes/chat.js → resolvePrimaryColor + filter null/empty
+/api/session/init response.siteConfig
    ↓
-session/init response.siteConfig
+Widget loads config
    ↓
-embed.js → window.LefluxConfig
-   ↓
-ChatUI constructor cleanCfg pass → strip null/undefined/empty
-   ↓
-this.config (final, used for render)
+Final config applied (with defaults for any missing fields)
 ```
 
 If a field is null at any layer it falls through to widget defaults. So missing dashboard config doesn't break the widget; it just uses sensible defaults.
 
-## Write flow (dashboard → Firestore)
+## Write flow (dashboard → server)
 
-Dashboard Settings page builds a partial update:
-
-```ts
-firestore.update(`sites/${siteId}`, {
-  'config.layout': edits.layout,
-  'config.primaryColor': edits.primaryColor,
-  // ...etc, one dotted-path per field
-});
-```
-
-Only changed fields are written. Defaults persist as `null`, not absent.
+The dashboard Settings page sends config changes to the server via the admin API. Only changed fields are persisted to your site's configuration. Defaults fall back to sensible widget defaults.
 
 ## Validation
 
-Schema is enforced via Firestore security rules + a server-side validator on the `/api/admin/sites/:id/config` endpoint (admin route). Direct Firestore writes from clients are rejected unless the user has site-edit permission for the org.
+Schema validation and access control are enforced server-side. Only authorized organization members with site-edit permissions can modify a site's configuration via the `/api/admin/sites/:id/config` endpoint.

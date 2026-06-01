@@ -29,7 +29,7 @@ Each stream has a unique `streamId`. If the WebSocket reconnects mid-stream, the
 | Full short answer         | 1.5–2s      | ~1s          |
 | Multi-paragraph answer    | 3–5s        | ~2s          |
 
-Server-side: OpenRouter → Gemini 2.5 Flash. Self-hosted with a closer model (Groq Llama 3.3 70B etc) cuts first-token latency to ~150ms.
+Server-side, streaming begins as soon as our AI model produces its first token, typically in under 1 second.
 
 ## Why streaming matters
 

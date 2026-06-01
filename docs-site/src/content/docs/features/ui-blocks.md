@@ -115,4 +115,4 @@ Clicking a CTA button in a block:
 
 ## Custom schemas
 
-Custom block types aren't admin-configurable today. The four listed above cover most use cases. If you need a custom block, see [Self-hosting](/docs/advanced/self-hosting/) — the widget's `ui-blocks.js` exposes a renderer registry you can extend.
+Custom block types aren't admin-configurable today. The four listed above cover most use cases. If you need a custom block type beyond the built-ins, please email support at ishaquehassan@digitalhire.com to discuss your requirements with the LeFlux team.

@@ -11,7 +11,7 @@ LeFlux works on any builder that lets you inject a `<script>` tag in the page he
 2. In the **Footer Code** field paste:
 
    ```html
-   <script src="https://leflux.xrlabs.app/embed.js" async></script>
+   <script src="https://leflux.ai/embed.js" async></script>
    ```
 
 3. **Save Changes**.

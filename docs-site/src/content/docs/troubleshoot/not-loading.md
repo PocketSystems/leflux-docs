@@ -28,9 +28,9 @@ Look for `[LeFlux]` log lines.
 
 Look for red errors. Common ones:
 
-- `Failed to fetch https://leflux.xrlabs.app/api/session/init` → network firewall blocking the API. Whitelist `*.xrlabs.app` in your proxy config.
+- `Failed to fetch https://leflux.ai/api/session/init` → network firewall blocking the API. Whitelist `leflux.ai` in your proxy config.
 - `CSP violation: refused to load <script>` → your Content Security Policy blocks the widget. See [Security model → CSP](/docs/advanced/security/#csp-compatibility).
-- `Uncaught (in promise) TypeError` originating from `leflux-agent.js` → please file an issue with the full stack trace.
+- `Uncaught (in promise) TypeError` originating from `leflux-agent.js` → email support at ishaquehassan@digitalhire.com with the full stack trace.
 
 ## 4. Launcher is rendered but invisible
 
@@ -40,7 +40,7 @@ If yes — the widget mounted but CSS is hiding it. Likely causes:
 
 - Host site CSS sets `* { display: none !important }` (rare; some print stylesheets). Inspect computed styles on the container.
 - A parent has `transform` / `filter` that creates a containing block, breaking the widget's fixed-position calc. Try `display: contents` on intermediate wrappers.
-- The launcher's z-index conflicts with a host-site sticky element with z-index > 2147483645. Bump the host's element down or self-host with a custom z-index.
+- The launcher's z-index conflicts with a host-site sticky element with z-index > 2147483645. Bump the host's element down.
 
 ## 5. Wrong host in allowed list
 
@@ -73,7 +73,7 @@ Check if the widget appears on desktop but not mobile (or vice versa). Causes:
 
 ## 9. Still broken
 
-File an issue at the [GitHub repo](https://github.com/PocketSystems/leflux-docs) with:
+Email support at ishaquehassan@digitalhire.com with:
 
 - Your domain
 - Browser + version

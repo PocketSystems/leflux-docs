@@ -17,7 +17,7 @@ A "session" in LeFlux is a single ongoing visitor conversation. It survives:
 | `localStorage` | Session id, full message history, widget state (open/docked)    | 24h (default)             |
 | `localStorage` | User data (name, email, phone) from form-fills                  | 30 days                   |
 | Server       | Session state + history + crawled context                         | 30 min idle eviction      |
-| Firestore    | Persisted message log (for dashboard analytics)                   | Forever (until you delete) |
+| Server (persisted) | Persisted message log (for dashboard analytics)              | Forever (until you delete) |
 
 ## Restore flow
 
@@ -55,7 +55,7 @@ After clear, the next message starts a fresh session with a new id.
 You control session retention via the dashboard:
 
 - **Settings → Privacy → Session retention** — default 24h on client + 30min idle on server. Reduce for high-privacy contexts.
-- **Settings → Privacy → Message log** — toggle whether messages persist to Firestore for dashboard review. Default ON for analytics.
+- **Settings → Privacy → Message log** — toggle whether messages persist on our servers for dashboard review. Default ON for analytics.
 
 Visitors can request deletion via your site's privacy mechanism; LeFlux exposes a `DELETE /api/session/:id` for one-off purges.
 
@@ -65,7 +65,7 @@ Sessions are NOT tied to a visitor identity. A `leflux:visitorId` cookie is gene
 
 ## Liveness
 
-Socket.io's transport-level ping/pong (every 25s by default) keeps the connection warm and lets the server detect dropped sockets quickly. After 30 minutes of session inactivity (no new visitor messages OR action results) the server-side session evicts; localStorage history on the client still survives the 24h TTL and a fresh session_init reuses it.
+Transport-level ping/pong (about every 25s) keeps the connection warm and lets the server detect dropped sockets quickly. After 30 minutes of session inactivity (no new visitor messages OR action results) the server-side session evicts; localStorage history on the client still survives the 24h TTL and a fresh session_init reuses it.
 
 ## Cross-device
 

@@ -3,9 +3,9 @@ title: REST endpoints
 description: HTTP API exposed by the LeFlux server.
 ---
 
-Base URL: `https://leflux.xrlabs.app/api` (or your self-hosted equivalent).
+Base URL: `https://leflux.ai/api`.
 
-All endpoints accept + return JSON. CORS is open by default; restrict in nginx for production self-hosts.
+All endpoints accept and return JSON. Requests are validated against your site's allowed-host list.
 
 ## POST /api/session/init
 
@@ -29,7 +29,7 @@ Headers:
 ```json
 {
   "sessionId": "uuid",
-  "wsUrl": "wss://leflux.xrlabs.app",
+  "wsUrl": "wss://leflux.ai",
   "siteConfig": {
     "layout": "floating",
     "primaryColor": "#a855f7",
@@ -50,7 +50,7 @@ Headers:
   "error": "host_not_registered",
   "message": "Host \"x\" is not registered with LeFlux...",
   "host": "x",
-  "signupUrl": "https://leflux.xrlabs.app/signup"
+  "signupUrl": "https://leflux.ai/signup"
 }
 ```
 
@@ -139,7 +139,7 @@ Server health + session stats. Public.
 
 ## GET /health
 
-Bare health check. Returns `{ status: "ok", timestamp: "..." }`. Used by nginx upstream health + GitHub Actions deploy verification.
+Bare health check. Returns `{ status: "ok", timestamp: "..." }`. Used for uptime monitoring and deployment verification.
 
 ## Errors
 
@@ -167,4 +167,4 @@ Common codes:
 
 Public endpoints (`session/init`, `chat`, `health`, `stats`) authenticate exclusively via the request `Origin` header against the allowed-host list. No token, no API key, no `Authorization` header required.
 
-Dashboard endpoints (`/api/admin/*`) require Firebase Auth ID token in `Authorization: Bearer <jwt>` header — those manage the tenant config and DO need real auth. See [Self-hosting](/docs/advanced/self-hosting/) for full admin API details.
+Dashboard endpoints (`/api/admin/*`) require an authenticated session token in the `Authorization: Bearer <jwt>` header. These endpoints manage tenant configuration and require a valid login.

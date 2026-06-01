@@ -3,7 +3,7 @@ title: Dashboard overview
 description: Tour of every panel in the LeFlux dashboard.
 ---
 
-The LeFlux dashboard at [leflux.xrlabs.app](https://leflux.xrlabs.app) is where you configure every aspect of your widget — appearance, behavior, allowed hosts, crawled knowledge.
+The LeFlux dashboard at [leflux.ai](https://leflux.ai) is where you configure every aspect of your widget — appearance, behavior, allowed hosts, crawled knowledge.
 
 ## Top-level layout
 
@@ -48,7 +48,7 @@ High-level feed across sessions: what visitors typically ask, where they navigat
 
 ## Per-site vs account-level
 
-- **Per-site config** (color, layout, nudge, greeting): saved on the site doc in Firestore. Server forwards to widget on every `/api/session/init` call.
+- **Per-site config** (color, layout, nudge, greeting): saved server-side per site. The server forwards the config to the widget on every `/api/session/init` call.
 - **Account config** (email, profile, billing): saved on the user doc. Doesn't affect the widget directly.
 
 ## Live theme

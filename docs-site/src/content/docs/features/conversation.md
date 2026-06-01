@@ -3,7 +3,7 @@ title: AI conversation
 description: How the conversational layer works and how to think about it.
 ---
 
-The agent is powered by a fast frontier LLM (Gemini 2.5 Flash by default; configurable on self-hosted installs). Visitor messages flow through:
+The agent is powered by a fast frontier LLM. Visitor messages flow through:
 
 1. **Frontend** — visitor types in the chat input, hits Enter.
 2. **WebSocket emit** — message + current page context posted to the server.

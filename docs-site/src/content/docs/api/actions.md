@@ -3,7 +3,7 @@ title: Action types
 description: Every action.type the agent can emit and the widget can execute.
 ---
 
-The agent's full action vocabulary. Reference for self-hosters extending the schema + integrators logging events.
+The agent's full action vocabulary. Reference for integrators logging or reacting to the agent's events.
 
 ## Action primitives (inside `execute_generic_sequence.steps`)
 
@@ -140,9 +140,9 @@ type ActionResult = {
 
 For sequences, the result is `{ success, results: StepResult[], completedSteps: number, totalSteps: number }`.
 
-## How the LLM picks an action
+## How the agent picks an action
 
-The LLM follows the [Operating principles](/docs/getting-started/how-it-works/#operating-principles) and the navigation decision tree:
+The agent follows the [Operating principles](/docs/getting-started/how-it-works/#operating-principles) and the navigation decision tree:
 
 1. Information question → `none` with inline answer from knowledge base.
 2. UI-block-compatible question → `render_ui_block`.

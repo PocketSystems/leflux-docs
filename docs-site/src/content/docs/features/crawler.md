@@ -3,7 +3,7 @@ title: Site crawler & knowledge base
 description: How LeFlux builds the knowledge graph that powers inline answers.
 ---
 
-A Playwright-based crawler runs against your site to build the knowledge base that lets the agent answer factual questions inline without navigating the visitor anywhere.
+Our crawler runs against your site to build the knowledge base that lets the agent answer factual questions inline without navigating the visitor anywhere.
 
 ## Trigger
 
@@ -16,7 +16,7 @@ Scheduled recurring crawls are on the roadmap; today you re-run manually when yo
 
 BFS walk starting from the site root. For each page:
 
-1. Loads the page in a headless Chromium with `domcontentloaded` + a 1s settle wait so JS-rendered content finishes.
+1. Loads the page in a headless browser with a short settle wait so JS-rendered content finishes.
 2. Extracts:
    - `<title>`
    - `<meta name="description">`
@@ -25,7 +25,7 @@ BFS walk starting from the site root. For each page:
    - All in-domain links (for the BFS frontier)
    - Typography signals (heading-font, body-font, button-radius detected via computed styles)
    - Dominant accent color sampled from the page palette
-3. Stores per-page in Firestore under `sites/<siteId>/pages/<docId>`.
+3. Stores each page under your site's knowledge base.
 4. Aggregates site-level signals: detected primary color, button radius, font stack.
 
 ## Limits
@@ -36,8 +36,8 @@ BFS walk starting from the site root. For each page:
 | Page cap (Pro)       | 500 pages                                                             |
 | Page cap (Enterprise)| 5,000 pages                                                            |
 | Depth cap            | None — bounded only by the page cap above.                            |
-| Per-page text limit  | Truncated past the document size that fits in Firestore's 20MB doc cap. |
-| User-Agent           | `Mozilla/5.0 (compatible; LeFluxCrawler/1.0; +https://leflux.xrlabs.app)` |
+| Per-page text limit  | Truncated past our per-page storage limit. |
+| User-Agent           | `Mozilla/5.0 (compatible; LeFluxCrawler/1.0; +https://leflux.ai)` |
 | Concurrency          | 1 (sequential). Polite — we don't burn your host's bandwidth.          |
 | Heartbeat            | Every 8s. Stale jobs (no heartbeat > 90s) are auto-reaped.            |
 
@@ -47,7 +47,7 @@ BFS walk starting from the site root. For each page:
 - Non-HTML responses (PDFs, images, JSON, video).
 - URLs outside your registered domain (cross-origin links).
 
-Note: today's crawler does NOT consult `robots.txt` or `noindex` meta tags. Pages reachable from your root via in-domain links are eligible to be crawled up to the plan cap. If you need to exclude specific paths, add them to the ignored-paths list in **Settings → Crawler** (planned — track [this issue](https://github.com/PocketSystems/leflux-docs/issues) for status).
+Note: today's crawler does NOT consult `robots.txt` or `noindex` meta tags. Pages reachable from your root via in-domain links are eligible to be crawled up to the plan cap. If you need to exclude specific paths, add them to the ignored-paths list in **Settings → Crawler** (planned).
 
 ## Live progress
 
@@ -85,6 +85,6 @@ If a question isn't being answered well, check whether the source page is crawle
 
 ## Privacy
 
-The crawler only fetches pages reachable from your site root — same as a search engine. It doesn't access auth-gated URLs (no cookie store, no login flow), doesn't bypass any access control. Content is stored in Firestore under your tenant's site doc; no cross-tenant data sharing.
+The crawler only fetches pages reachable from your site root — same as a search engine. It doesn't access auth-gated URLs (no cookie store, no login flow), doesn't bypass any access control. Content is stored under your tenant's site; no cross-tenant data sharing.
 
 If your site has a `robots.txt` you want enforced, the recommended approach today is to keep sensitive content behind auth (the crawler can't reach those pages). Per-path exclusions in the dashboard are on the roadmap.

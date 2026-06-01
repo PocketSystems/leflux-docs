@@ -8,7 +8,7 @@ LeFlux is a self-contained AI chat widget for the web. Drop one script tag on yo
 ## What you get
 
 - **Conversational agent**. The visitor types in any language; the agent reads context (current page, indexed elements, your site's knowledge base) and replies with both a message and, when needed, an action that's executed in the browser.
-- **Site crawler**. A Playwright-based crawler walks your site (BFS) and stores each page's title, body text, headings, links, contact info, prices, and feature lists. The agent reads from this on every turn so it can answer most questions inline without making the visitor navigate.
+- **Site crawler**. Our crawler walks your site and stores each page's title, body text, headings, links, contact info, prices, and feature lists. The agent reads from this on every turn so it can answer most questions inline without making the visitor navigate.
 - **Action execution**. Click, type, scroll, navigate, select. Composed into multi-step sequences. SPA-aware so React Router / Next.js routes don't blow away state.
 - **Shadow DOM isolation**. Widget styles live in their own shadow root — they can't break your site's CSS, and your site's CSS can't break the widget.
 - **Three layouts** — floating bubble, bottom-bar pill, side-panel drawer. Pick per-site from the dashboard.

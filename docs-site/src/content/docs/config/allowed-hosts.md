@@ -9,9 +9,9 @@ This is the entire security model. There's no API key, no token, no secret to ma
 
 ## Add hosts
 
-The list is set when you create the site (the dashboard auto-stores the domain + `www.` form). To add additional hosts (staging subdomains, localhost for dev) you currently edit the site doc directly in the Firebase console under `sites/{siteId}.allowedHosts`.
+The list is set when you create the site (the dashboard auto-stores the domain + `www.` form). To add additional hosts (staging subdomains, localhost for dev), email support at ishaquehassan@digitalhire.com. We can add them to your allowed-host list quickly.
 
-A dashboard UI to add/remove hosts inline is on the roadmap — track [the changelog](/docs/changelog/) for status.
+A dashboard UI to add/remove hosts inline is on the roadmap. Check [the changelog](/docs/changelog/) for updates.
 
 Sample stored array shape:
 
@@ -77,7 +77,7 @@ When a host isn't allowed, the server responds with:
   "error": "host_not_registered",
   "message": "Host \"unknown.example\" is not registered with LeFlux. ...",
   "host": "unknown.example",
-  "signupUrl": "https://leflux.xrlabs.app/signup"
+  "signupUrl": "https://leflux.ai/signup"
 }
 ```
 

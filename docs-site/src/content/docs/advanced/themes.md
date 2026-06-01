@@ -58,7 +58,7 @@ For SVG that needs to follow your theme color: use `currentColor` for fill/strok
 
 ## Custom UI block renderers
 
-The widget's `widget/src/ui-blocks.js` exposes a renderer registry on `window.__lefluxBlockRenderers`. Self-hosters can register a custom renderer:
+The widget exposes a renderer registry on `window.__lefluxBlockRenderers`. You can register a custom renderer at runtime:
 
 ```js
 window.__lefluxBlockRenderers['my_custom_type'] = (data, shadow) => {
@@ -69,7 +69,7 @@ window.__lefluxBlockRenderers['my_custom_type'] = (data, shadow) => {
 };
 ```
 
-The server-side LLM prompt template needs to know your custom block type exists — see [Self-hosting](/docs/advanced/self-hosting/) for the schema gate.
+For custom block types to work end-to-end, the server-side model prompt template needs to know they exist. To add a new block type, email support at ishaquehassan@digitalhire.com to coordinate with the LeFlux team.
 
 ## Custom launcher icon
 

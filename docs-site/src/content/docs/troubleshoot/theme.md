@@ -22,7 +22,7 @@ If all three are unset, the widget falls back to a safe teal (`#0d9488`) as a la
 1. Dashboard → Settings → Appearance.
 2. Check the Primary color value field. Confirm it's the color you expect.
 3. Save again.
-4. Verify in Firestore (or via the API): `GET /api/session/init` response should have `siteConfig.primaryColor` matching.
+4. Verify via the API: `GET /api/session/init` response should have `siteConfig.primaryColor` matching.
 
 If the value isn't saved, it's a dashboard issue — check console for save errors.
 
@@ -31,14 +31,14 @@ If the value isn't saved, it's a dashboard issue — check console for save erro
 In DevTools console on your site:
 
 ```js
-fetch('https://leflux.xrlabs.app/api/session/init', {
+fetch('https://leflux.ai/api/session/init', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({ siteHost: location.host, pageUrl: location.href })
 }).then(r => r.json()).then(d => console.log(d.siteConfig));
 ```
 
-Inspect `primaryColor` in the response. If it's null / wrong, the issue is server-side (Firestore or the route).
+Inspect `primaryColor` in the response. If it's null / wrong, the issue is server-side.
 
 ### Is the widget applying the value?
 

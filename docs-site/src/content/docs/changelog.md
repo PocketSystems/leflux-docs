@@ -21,7 +21,7 @@ Reverse chronological. Dates are the date the change landed in production.
 
 ## 2026-05-26
 
-- **Developer docs site** launched at [/docs](https://leflux.xrlabs.app/docs/). Searchable, dark + light mode, full coverage of installation, configuration, features, API.
+- **Developer docs site** launched at [/docs](https://leflux.ai/docs/). Searchable, dark + light mode, full coverage of installation, configuration, features, API.
 
 ## 2026-05-25
 
@@ -49,15 +49,15 @@ Reverse chronological. Dates are the date the change landed in production.
 
 ### Dashboard
 
-- **Tailwind + shadcn/ui redesign** — teal accent (was purple), modernized cards, sticky sidebar with active-nav highlighting.
+- **Dashboard redesign** — modernized cards, sticky sidebar with active-nav highlighting.
 - **Live crawl panel** — real-time progress (pages discovered, walked, current URL).
 - **Launcher + Nudge configurators** — full UI for all the per-site widget chrome.
 - **Empty session cleanup** — dashboard hides + server stops writing empty sessions to DB.
 
 ## 2026-05-23
 
-- **LeFlux Cloud MVP** shipped. Multi-tenant: users → orgs → sites. Per-site config (color, layout, allowed hosts), Playwright crawler, embed.js zero-config loader.
-- **OpenRouter + Gemini 2.5 Flash** replaces the legacy Claude CLI for the LLM call path. Sub-second first-token latency.
+- **LeFlux Cloud MVP** shipped. Multi-tenant: users → orgs → sites. Per-site config (color, layout, allowed hosts), site crawler, embed.js zero-config loader.
+- **Faster model pipeline** — sub-second first-token latency.
 
 ## 2026-05-15
 
@@ -69,8 +69,6 @@ Reverse chronological. Dates are the date the change landed in production.
 
 ## 2026-04-03
 
-- **Initial public release** — basic chat widget + Claude CLI integration. Server, widget bundle, embed.js loader.
+- **Initial public release** — basic chat widget. Server, widget bundle, embed.js loader.
 
 ---
-
-For granular commit-level changes, see the [GitHub commit history](https://github.com/PocketSystems/leflux-docs/commits/main).

@@ -18,7 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         {children}
         <Script
-          src="https://leflux.xrlabs.app/embed.js"
+          src="https://leflux.ai/embed.js"
           strategy="afterInteractive"
         />
       </body>
@@ -47,7 +47,7 @@ export default function Document() {
         <Main />
         <NextScript />
         <Script
-          src="https://leflux.xrlabs.app/embed.js"
+          src="https://leflux.ai/embed.js"
           strategy="afterInteractive"
         />
       </body>
@@ -63,7 +63,7 @@ Put the script tag in `public/index.html`:
 ```html
 <body>
   <div id="root"></div>
-  <script src="https://leflux.xrlabs.app/embed.js" async></script>
+  <script src="https://leflux.ai/embed.js" async></script>
 </body>
 ```
 
@@ -95,7 +95,7 @@ return (
     {/* ...your app... */}
     {showWidget && (
       <Script
-        src="https://leflux.xrlabs.app/embed.js"
+        src="https://leflux.ai/embed.js"
         strategy="afterInteractive"
       />
     )}
@@ -112,6 +112,6 @@ After deploy, open Chrome DevTools → Network. You should see two requests on f
 - `embed.js` (~5 KB)
 - `leflux-agent.js` (~150 KB gzipped)
 
-Then a `wss://leflux.xrlabs.app/socket.io/` WebSocket connection in the WS tab.
+Then a `wss://leflux.ai` WebSocket connection in the WS tab.
 
 If `embed.js` 200s but `leflux-agent.js` is 4xx or missing — the host wasn't allowed. Check **Dashboard → Settings → Allowed hosts** and make sure your prod domain is in the list.

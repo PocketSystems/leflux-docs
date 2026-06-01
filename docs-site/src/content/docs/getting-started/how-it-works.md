@@ -7,7 +7,7 @@ LeFlux is built on four ideas. Understanding them helps you debug, customize, an
 
 ## 1. Universal indexing
 
-The widget can't write CSS selectors — different sites have different markup, and selectors break the moment a host site re-renders. Instead, on every turn, the widget scans the page and assigns a fresh numeric `id` to every interactive element (links, buttons, inputs, selects, role-based widgets). Each id maps to a real DOM element via a `data-leflux-id` attribute.
+The widget can't write CSS selectors - different sites have different markup, and selectors break the moment a host site re-renders. Instead, on every turn, the widget scans the page and assigns a fresh numeric `id` to every interactive element (links, buttons, inputs, selects, role-based widgets). Each id maps to a real DOM element via a `data-leflux-id` attribute.
 
 The agent receives a list like:
 
@@ -20,7 +20,7 @@ The agent receives a list like:
 ]
 ```
 
-When the agent emits `click 12` the widget looks up element 12, scrolls it into view, checks for blocking overlays, and executes the click. Same model for every site — no per-tenant configuration.
+When the agent emits `click 12` the widget looks up element 12, scrolls it into view, checks for blocking overlays, and executes the click. Same model for every site - no per-tenant configuration.
 
 ## 2. Iterative loop
 
@@ -44,13 +44,13 @@ Each iteration the LLM sees:
 
 - The latest page context (URL, indexedElements, visibleText, forms, previouslyFilledFields).
 - The site's Sitemap + crawled knowledge.
-- The state trace of the previous action ("URL unchanged at /x — try a different strategy").
+- The state trace of the previous action ("URL unchanged at /x, try a different strategy").
 
-Guards break the loop when progress stalls — same elementId clicked 3x, same URL navigated 2x in a row, scroll-only emissions 3x.
+Guards break the loop when progress stalls - same elementId clicked 3x, same URL navigated 2x in a row, scroll-only emissions 3x.
 
 ## 3. Knowledge-base injection
 
-A Playwright crawler walks your site (BFS, configurable depth + cap) and stores for each page:
+Our crawler walks your site (configurable depth + cap) and stores for each page:
 
 - canonical URL + pathname
 - page title + meta description
@@ -64,7 +64,7 @@ On every LLM call, the server:
 2. Injects the top-K pages' summaries, headings, notes, AND raw body text excerpts as a "Cross-page knowledge" block at the top of the prompt.
 3. Extracts emails + phone numbers from all top-K pages and injects them as a "Site contacts" block.
 
-For info questions ("what's your phone number") the agent answers from the knowledge base inline — zero navigation. For navigational requests ("take me to pricing") the agent navigates using a URL pulled verbatim from the Sitemap.
+For info questions ("what's your phone number") the agent answers from the knowledge base inline - zero navigation. For navigational requests ("take me to pricing") the agent navigates using a URL pulled verbatim from the Sitemap.
 
 ## 4. Action primitives
 
@@ -76,7 +76,7 @@ The agent emits actions, not code. Five primitives:
 | `type`     | `elementId`, `inputData`                                                                  |
 | `select`   | `elementId`, `inputData` (must match an option)                                           |
 | `scroll_to`| `elementId`                                                                               |
-| `navigate` | `url` (path or full URL — pulled from Sitemap)                                            |
+| `navigate` | `url` (path or full URL - pulled from Sitemap)                                            |
 | `wait`     | `waitDuration` (ms)                                                                       |
 
 Compose them into a sequence (`execute_generic_sequence`) for atomic multi-step flows. Form submit, for example, lands as a single sequence:
@@ -95,15 +95,15 @@ Compose them into a sequence (`execute_generic_sequence`) for atomic multi-step 
 
 The widget validates each step, retries on transient failures (overlay, async dropdown), and reports the result back to the server which feeds the next iteration.
 
-## Where the magic happens
+## How we build it
 
-| Concern                         | Lives in                                |
-|----------------------------------|------------------------------------------|
-| Element scanning + indexing      | `widget/src/dom-inspector.js`           |
-| Action execution + retry         | `widget/src/action-executor.js`         |
-| Iterative LLM loop               | `server/src/llm-integration.js`         |
-| Loop guards + state traces       | `server/src/websocket-handler.js`       |
-| Knowledge-base ranking           | `server/src/page-context.js`            |
-| Site crawl (BFS + extraction)    | `crawler/src/crawl.js`                  |
+LeFlux is built from six core subsystems:
+
+- **Element scanning + indexing** - scans your page and assigns fresh numeric IDs to interactive elements on every turn.
+- **Action execution + retry** - executes agent actions (click, type, scroll, navigate) and handles transient failures like overlays or async dropdowns.
+- **Iterative LLM loop** - runs the server-side decision loop, sends page context to the model, receives actions, and routes results back.
+- **Loop guards + state traces** - detects stalled progress (same element clicked 3x, same URL navigated 2x, scroll-only 3x) and stops the loop.
+- **Knowledge-base ranking** - ranks crawled pages by relevance to the visitor's message and injects summaries + contact info into the prompt.
+- **Site crawl + extraction** - crawls your site and stores canonical URLs, titles, headings, body text, and structured signals (links, emails, prices, FAQ pairs).
 
 [Next → Install on any site](/docs/install/script-tag/).

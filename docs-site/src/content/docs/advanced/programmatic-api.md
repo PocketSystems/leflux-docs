@@ -80,7 +80,7 @@ Wipe the persisted chat history (localStorage) and start a fresh session. Useful
 
 ### `LeFlux.showLauncher(visible)`
 
-Per-page override of the dashboard "Hide launcher" setting. Pass `true` to force-show the FAB, `false` to hide. Does NOT persist — refreshing the page returns to whatever the Firestore config says.
+Per-page override of the dashboard "Hide launcher" setting. Pass `true` to force-show the FAB, `false` to hide. Does NOT persist — refreshing the page returns to whatever the saved dashboard config says.
 
 ```js
 // Hide the launcher only on /checkout
@@ -190,6 +190,6 @@ None of these are required. The widget mounts with safe defaults if you paste on
 
 ## Notes
 
-The API is intentionally tiny — most config belongs in the dashboard, not in code. If you find yourself reaching for advanced JS API, the dashboard probably has a knob for it. Open an issue if you hit a real gap.
+The API is intentionally tiny — most config belongs in the dashboard, not in code. If you find yourself reaching for advanced JS API, the dashboard probably has a knob for it. Contact support at ishaquehassan@digitalhire.com if you hit a real gap.
 
 For server-side integrations (push events into Slack, log to your own analytics backend, custom action verification) see the [WebSocket events](/docs/advanced/websocket-events/) reference.

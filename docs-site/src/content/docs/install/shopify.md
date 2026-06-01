@@ -13,7 +13,7 @@ The cleanest path on Shopify is editing `theme.liquid` directly. Works on every 
 4. Search for `</body>`. Right above it paste:
 
    ```html
-   <script src="https://leflux.xrlabs.app/embed.js" async></script>
+   <script src="https://leflux.ai/embed.js" async></script>
    ```
 
 5. **Save**.

@@ -3,10 +3,10 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
 // Docs site for the LeFlux widget. Built as a static SPA served at
-// https://leflux.xrlabs.app/docs/ via nginx — `base` set accordingly
+// https://leflux.ai/docs/ — `base` set accordingly
 // so every asset URL resolves under /docs.
 export default defineConfig({
-  site: 'https://leflux.xrlabs.app',
+  site: 'https://leflux.ai',
   base: '/docs',
   trailingSlash: 'ignore',
   build: {
@@ -23,10 +23,6 @@ export default defineConfig({
       favicon: '/favicon.svg',
       customCss: ['./src/styles/custom.css'],
       social: {
-        github: 'https://github.com/PocketSystems/leflux-docs',
-      },
-      editLink: {
-        baseUrl: 'https://github.com/PocketSystems/leflux-docs/edit/main/docs-site/',
       },
       lastUpdated: true,
       pagination: true,
@@ -44,9 +40,9 @@ export default defineConfig({
         // docs OG card (install snippet) at /docs/og.jpg.
         {
           tag: 'meta',
-          attrs: { property: 'og:image', content: 'https://leflux.xrlabs.app/docs/og.jpg' },
+          attrs: { property: 'og:image', content: 'https://leflux.ai/docs/og.jpg' },
         },
-        { tag: 'meta', attrs: { property: 'og:image:secure_url', content: 'https://leflux.xrlabs.app/docs/og.jpg' } },
+        { tag: 'meta', attrs: { property: 'og:image:secure_url', content: 'https://leflux.ai/docs/og.jpg' } },
         { tag: 'meta', attrs: { property: 'og:image:type', content: "image/jpeg" } },
         { tag: 'meta', attrs: { property: 'og:image:width', content: '1200' } },
         { tag: 'meta', attrs: { property: 'og:image:height', content: '630' } },
@@ -56,13 +52,13 @@ export default defineConfig({
           tag: 'meta',
           attrs: { name: 'twitter:card', content: 'summary_large_image' },
         },
-        { tag: 'meta', attrs: { name: 'twitter:image', content: 'https://leflux.xrlabs.app/docs/og.jpg' } },
+        { tag: 'meta', attrs: { name: 'twitter:image', content: 'https://leflux.ai/docs/og.jpg' } },
         { tag: 'meta', attrs: { name: 'twitter:image:alt', content: 'LeFlux developer docs' } },
         // Dogfood the LeFlux widget on the docs themselves — every page gets
         // the live assistant (same-origin host, already an allowed site).
         {
           tag: 'script',
-          attrs: { src: 'https://leflux.xrlabs.app/embed.js', async: true },
+          attrs: { src: 'https://leflux.ai/embed.js', async: true },
         },
       ],
       sidebar: [
@@ -118,7 +114,6 @@ export default defineConfig({
             { label: 'Programmatic API', link: '/advanced/programmatic-api/' },
             { label: 'WebSocket events', link: '/advanced/websocket-events/' },
             { label: 'Custom themes',    link: '/advanced/themes/' },
-            { label: 'Self-hosting',     link: '/advanced/self-hosting/' },
             { label: 'Security model',   link: '/advanced/security/' },
           ],
         },

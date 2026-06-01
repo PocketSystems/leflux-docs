@@ -19,7 +19,7 @@ document.querySelector('.your-help-button').addEventListener('click', () => {
 
 See the [Programmatic API](/docs/advanced/programmatic-api/) reference for the full surface.
 
-The hidden setting persists per-site. For a one-off per-page override (e.g. hide the launcher only on `/checkout`) call `window.LeFlux.showLauncher(false)` after the `leflux:ready` event — it flips the FAB visibility without writing to Firestore.
+The hidden setting persists per-site. For a one-off per-page override (e.g. hide the launcher only on `/checkout`) call `window.LeFlux.showLauncher(false)` after the `leflux:ready` event — it flips the FAB visibility without changing the saved dashboard setting.
 
 ## Shape
 

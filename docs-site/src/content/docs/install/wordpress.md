@@ -14,7 +14,7 @@ Easiest, theme-independent, survives theme updates.
 3. In the **Footer** section paste:
 
    ```html
-   <script src="https://leflux.xrlabs.app/embed.js" async></script>
+   <script src="https://leflux.ai/embed.js" async></script>
    ```
 
 4. **Save**.
@@ -44,7 +44,7 @@ For full-site-editing themes (Twenty Twenty-Four+, Spectra, Kadence, etc).
 If your site uses WP Rocket, WP Super Cache, W3 Total Cache, or LiteSpeed Cache:
 
 - Clear the cache after pasting the snippet, otherwise visitors see a stale page without the widget.
-- Some caches inline + minify external scripts — add `https://leflux.xrlabs.app/embed.js` to the **JS exclusion list** so it's loaded as-is. Don't combine it with other scripts.
+- Some caches inline + minify external scripts — add `https://leflux.ai/embed.js` to the **JS exclusion list** so it's loaded as-is. Don't combine it with other scripts.
 
 ## CDN gotchas
 
@@ -55,7 +55,7 @@ If you proxy through Cloudflare:
 
 ## Verification
 
-Open Chrome DevTools → Network → reload. You should see two requests to `leflux.xrlabs.app`:
+Open Chrome DevTools → Network → reload. You should see two requests to `leflux.ai`:
 
 - `/embed.js` — small loader
 - `/leflux-agent.js` — the main bundle (~150 KB gzipped)

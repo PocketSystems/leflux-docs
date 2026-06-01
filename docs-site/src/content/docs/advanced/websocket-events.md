@@ -3,16 +3,16 @@ title: WebSocket events
 description: Wire protocol between widget and server.
 ---
 
-LeFlux uses Socket.io over a single long-lived WebSocket connection. Mostly an implementation detail — the embed handles all of it transparently — but exposed here for self-hosters + advanced integrations.
+LeFlux uses a single long-lived WebSocket connection. Mostly an implementation detail — the embed handles all of it transparently — but exposed here for advanced integrations.
 
 ## Connection
 
-URL: `wss://leflux.xrlabs.app/socket.io/` (or your self-hosted equivalent).
+URL: `wss://leflux.ai`.
 
 Auth: same model as the REST endpoints — the browser's `Origin` header on the upgrade handshake is matched against the allowed-host list. Visitor session id is passed as a query param OR via the first `join_session` event:
 
 ```
-wss://leflux.xrlabs.app/socket.io/?sessionId=<uuid>
+wss://leflux.ai?sessionId=<uuid>
 ```
 
 One socket per session. Server kicks older sockets if a newer one joins the same session room.
@@ -71,18 +71,9 @@ Sequence (multi-step):
 
 ## Liveness + reconnect
 
-Socket.io's transport-level ping/pong (default 25s) keeps the connection warm and detects dropped sockets. If the WebSocket disconnects, Socket.io's built-in reconnect re-establishes within a few seconds and the server-side session resumes seamlessly.
+Transport-level ping/pong (roughly every 25s) keeps the connection warm and detects dropped connections. If the WebSocket disconnects, the connection auto-reconnects within a few seconds and the server-side session resumes seamlessly.
 
 ## Backpressure
 
 Server enforces a max 30 action_plans per task to prevent runaway loops. The widget enforces a max 5 client-side iteration round-trips per visitor message as defense-in-depth.
 
-## Self-hosters
-
-If you're running your own LeFlux instance:
-
-- Server stack is Node + Express + Socket.io v4 (`server/src/index.js`)
-- Default port is 3002, behind nginx for TLS termination
-- Socket.io uses websocket transport with polling fallback (works behind strict proxies)
-
-See [Self-hosting](/docs/advanced/self-hosting/).

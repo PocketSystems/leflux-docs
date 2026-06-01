@@ -8,10 +8,10 @@ Detailed at [WebSocket events](/docs/advanced/websocket-events/). This page is t
 ## URL
 
 ```
-wss://leflux.xrlabs.app/socket.io/?sessionId=<uuid>
+wss://leflux.ai/?sessionId=<uuid>
 ```
 
-Self-hosted equivalents follow the same shape. There is no token in the URL — the Socket.io upgrade handshake passes the visitor's browser `Origin`, which the server validates against the allowed-host list the same way as the REST endpoints.
+There is no token in the URL. The connection upgrade passes the visitor's browser `Origin`, which the server validates against the allowed-host list the same way as the REST endpoints.
 
 ## Client → server events
 
@@ -99,11 +99,11 @@ See [Action types](/docs/api/actions/) for every valid `action.type` value.
 
 ## Liveness semantics
 
-Socket.io's own transport ping/pong (default 25s interval) detects dropped sockets. There's no application-level `heartbeat` event today. Server-side session eviction triggers after 30 min of inactivity (no visitor messages OR action results). After eviction, the widget re-inits via `POST /api/session/init` on the next page load.
+Transport-level ping/pong (about every 25s) detects dropped connections. There's no application-level `heartbeat` event today. Server-side session eviction triggers after 30 min of inactivity (no visitor messages OR action results). After eviction, the widget re-inits via `POST /api/session/init` on the next page load.
 
 ## Reconnect
 
-Socket.io's built-in exponential backoff handles transient disconnects. Widget shows a brief "Reconnecting…" status if disconnect lasts >2s. On reconnect, the server replays any events the widget missed during the gap.
+The connection uses exponential backoff to handle transient disconnects. Widget shows a brief "Reconnecting…" status if disconnect lasts >2s. On reconnect, the server replays any events the widget missed during the gap.
 
 ## Bidirectional one-socket-per-session
 

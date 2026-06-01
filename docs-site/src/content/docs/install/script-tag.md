@@ -8,7 +8,7 @@ The universal install. Copy one tag into your HTML and you're done.
 ## The snippet
 
 ```html
-<script src="https://leflux.xrlabs.app/embed.js" async></script>
+<script src="https://leflux.ai/embed.js" async></script>
 ```
 
 That's it. No tokens, no keys, no configuration.
@@ -53,7 +53,7 @@ You probably want separate sites for staging + production so test traffic doesn'
 ```html
 <!-- Same snippet on every environment. The server routes traffic
      to the correct tenant based on Origin. -->
-<script src="https://leflux.xrlabs.app/embed.js" async></script>
+<script src="https://leflux.ai/embed.js" async></script>
 ```
 
 ## Local development
@@ -61,7 +61,7 @@ You probably want separate sites for staging + production so test traffic doesn'
 Localhost installs work but you must add `localhost` (or whatever host you're testing) to one of your sites' allowed-host list. Easier alternative: set `data-preview="true"` to bypass server calls entirely and use widget defaults — useful for visual testing without registering a site.
 
 ```html
-<script src="https://leflux.xrlabs.app/embed.js" data-preview="true" async></script>
+<script src="https://leflux.ai/embed.js" data-preview="true" async></script>
 ```
 
 ## Next platform

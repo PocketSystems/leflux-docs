@@ -7,7 +7,7 @@ description: How LeFlux keeps your visitors safe and your data isolated.
 
 - Mounts inside a shadow root so it can't read host-page DOM outside its own subtree (shadow DOM closed-ish — actually open mode but with strict input/output isolation).
 - Communicates with the LeFlux API over TLS.
-- Stores conversation locally (localStorage) and on the server (Firestore).
+- Stores conversation locally (localStorage) and on our servers.
 - Executes click/type/navigate on the live page — same as a visitor would.
 
 ## What the widget does NOT do
@@ -24,16 +24,14 @@ Every session-init call is host-validated server-side against the site's allowed
 
 ## Data residency
 
-Firestore data lives in your Firebase project's chosen region. Conversations + crawled content are stored under `sites/{siteId}` — your tenant doc, not cross-tenant. Other tenants can't read your data.
-
-For zero-trust scenarios, [self-host](/docs/advanced/self-hosting/) — you control the Firestore project and the LLM endpoint.
+Conversations + crawled content are stored server-side under your own tenant, isolated per site. Other tenants cannot read your data — it's secure and isolated by design.
 
 ## Visitor privacy
 
 - Anonymous by default: no PII collected unless the visitor provides it during a form-fill.
 - `leflux:visitorId` cookie is a random UUID for analytics aggregation, not tied to identity. Can be disabled via `data-no-visitor-id`.
 - User-data-store (name, email, phone from form-fills) lives in localStorage only, 30-day TTL, never sent to anyone except the LLM call that's currently filling a form. Disable via `data-no-user-memory`.
-- Conversation messages persist in Firestore by default (for dashboard analytics). Toggle off in Settings → Privacy → Message log.
+- Conversation messages persist on our servers by default (for dashboard analytics). Toggle off in Settings → Privacy → Message log.
 
 ## Prompt injection
 
@@ -61,12 +59,12 @@ For actions the system prompt classifies as high-stakes (delete, purchase, send-
 
 ## CSP compatibility
 
-The widget loads from `https://leflux.xrlabs.app`. To allow it in your Content Security Policy:
+The widget loads from `https://leflux.ai`. To allow it in your Content Security Policy:
 
 ```
-script-src 'self' https://leflux.xrlabs.app;
-connect-src 'self' https://leflux.xrlabs.app wss://leflux.xrlabs.app;
-img-src 'self' https://leflux.xrlabs.app data:;
+script-src 'self' https://leflux.ai;
+connect-src 'self' https://leflux.ai wss://leflux.ai;
+img-src 'self' https://leflux.ai data:;
 style-src-elem 'self' 'unsafe-inline';   /* widget injects styles into shadow root */
 ```
 
@@ -74,8 +72,8 @@ If you have a strict CSP without `'unsafe-inline'` for styles, the widget won't 
 
 ## Subresource integrity (SRI)
 
-The `embed.js` bundle is small + frequently updated, so we don't ship a stable SRI hash. The main `leflux-agent.js` is also no-cache to ensure visitors always get the latest bundle. If you need SRI, [self-host](/docs/advanced/self-hosting/) and pin a version.
+The `embed.js` bundle is small + frequently updated, so we don't ship a stable SRI hash. The main `leflux-agent.js` is versioned and no-cache to ensure visitors always get the latest secure bundle.
 
 ## Disclosure
 
-Security issues: email ishaquehassan@digitalhire.com with subject `[SECURITY]`. Please don't file public GitHub issues for vulnerabilities.
+Security issues: email ishaquehassan@digitalhire.com with subject `[SECURITY]`. Please report privately rather than disclosing vulnerabilities in any public channel.

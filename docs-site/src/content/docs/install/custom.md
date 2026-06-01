@@ -12,7 +12,7 @@ In `index.html`:
 ```html
 <body>
   <div id="app"></div>
-  <script src="https://leflux.xrlabs.app/embed.js" async></script>
+  <script src="https://leflux.ai/embed.js" async></script>
 </body>
 ```
 
@@ -25,7 +25,7 @@ In `index.html`:
 ```html
 <body>
   <app-root></app-root>
-  <script src="https://leflux.xrlabs.app/embed.js" async></script>
+  <script src="https://leflux.ai/embed.js" async></script>
 </body>
 ```
 
@@ -38,7 +38,7 @@ export class LefluxLoader {
     if (document.getElementById('leflux-embed')) return;
     const s = document.createElement('script');
     s.id = 'leflux-embed';
-    s.src = 'https://leflux.xrlabs.app/embed.js';
+    s.src = 'https://leflux.ai/embed.js';
     s.async = true;
     document.body.appendChild(s);
   }
@@ -52,7 +52,7 @@ export class LefluxLoader {
 ```html
 <body data-sveltekit-preload-data="hover">
   <div style="display: contents">%sveltekit.body%</div>
-  <script src="https://leflux.xrlabs.app/embed.js" async></script>
+  <script src="https://leflux.ai/embed.js" async></script>
 </body>
 ```
 
@@ -90,7 +90,7 @@ function loadLeflux() {
     if (document.getElementById('leflux-embed')) return resolve();
     const s = document.createElement('script');
     s.id = 'leflux-embed';
-    s.src = 'https://leflux.xrlabs.app/embed.js';
+    s.src = 'https://leflux.ai/embed.js';
     s.async = true;
     s.onload = resolve;
     s.onerror = reject;
