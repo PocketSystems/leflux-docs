@@ -1,0 +1,32 @@
+---
+title: Page not found
+description: That page does not exist on the LeFlux docs. Search, head home, or jump to a popular section.
+template: splash
+pagefind: false
+---
+
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+<div class="lfx-404">
+  <span class="lfx-404__code">404</span>
+  <h2 class="lfx-404__title">This page wandered off</h2>
+  <p class="lfx-404__sub">
+    The link might be broken or the page moved. Search with <kbd>⌘</kbd><kbd>K</kbd>,
+    head back home, jump to a popular section below, or just ask the assistant in the corner.
+  </p>
+  <div class="lfx-404__actions">
+    <a class="lfx-404__btn lfx-404__btn--primary" href="/docs/">Back to docs home</a>
+    <a class="lfx-404__btn" href="/docs/getting-started/quick-start/">Quick start</a>
+  </div>
+</div>
+
+## Popular destinations
+
+<CardGrid>
+  <LinkCard title="Quick start" href="/docs/getting-started/quick-start/" description="Drop LeFlux on your site with one script tag." />
+  <LinkCard title="How it works" href="/docs/getting-started/how-it-works/" description="The agent, universal indexing, and the knowledge base." />
+  <LinkCard title="Install guides" href="/docs/install/script-tag/" description="Script tag, React / Next.js, WordPress, Shopify, Webflow." />
+  <LinkCard title="Configure the widget" href="/docs/config/dashboard/" description="Brand color, layout, greeting, launcher, nudge, chips." />
+  <LinkCard title="Features" href="/docs/features/conversation/" description="Conversation, actions, crawler, form fill, streaming." />
+  <LinkCard title="API reference" href="/docs/api/rest/" description="REST endpoints, WebSocket events, config schema." />
+</CardGrid>
