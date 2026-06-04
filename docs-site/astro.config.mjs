@@ -66,9 +66,15 @@ export default defineConfig({
         { tag: 'meta', attrs: { name: 'twitter:image:alt', content: 'LeFlux developer docs' } },
         // Dogfood the LeFlux widget on the docs themselves — every page gets
         // the live assistant (same-origin host, already an allowed site).
+        // ORIGIN-RELATIVE on purpose: the SAME static build is served at both
+        // leflux.ai/docs (prod) and dev.leflux.ai/docs (dev), so a hardcoded
+        // https://leflux.ai/embed.js made dev docs load the PROD widget. `/embed.js`
+        // resolves against the current origin → prod docs gets the prod widget,
+        // dev docs gets the dev widget. No mixing. (The install snippets in the
+        // .md/.mdx pages stay absolute — those are what real customers paste.)
         {
           tag: 'script',
-          attrs: { src: 'https://leflux.ai/embed.js', async: true },
+          attrs: { src: '/embed.js', async: true },
         },
       ],
       sidebar: [
