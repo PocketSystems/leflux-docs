@@ -5,6 +5,20 @@ description: What's new in LeFlux.
 
 Reverse chronological. Dates are the date the change landed in production.
 
+## 2026-06-04
+
+### Widget
+
+- **Side-panel blends into your site** — the side-panel drawer now samples your page's background colour right at its edge and adopts it as its own surface, re-tinting smoothly as visitors scroll past differently-coloured sections. The old hard drop-shadow is gone, replaced by a hairline left border in a tone derived from your site — so the panel reads as a native part of the page, not a floating slab.
+- **Sharper on dark themes** — on dark sites the floating + bottom-bar widget surfaces now lift to a slightly lighter tone derived from your page background, so the widget stands out as raised chrome instead of melting into a dark background. Fully automatic, per-site.
+- **Float toggle on every layout** — the header dock/undock control now appears on all layouts. Floating + bottom-bar widgets expand into a side drawer; the side-panel pops out into a floating window. Visitors can move the chat to wherever suits them.
+- **Smoother side-panel animation** — the drawer now slides out on close to mirror its open, and never resizes mid-animation.
+
+### Dashboard
+
+- **Transfer a site to another account** — Settings → Danger → **Transfer site**. Enter the destination account's email (verified live before you commit) and ownership moves over instantly; the widget keeps serving with no interruption or re-crawl.
+- **Live preview auto-opens** — switching the widget layout in Settings now opens the live preview in that layout immediately, so you see the change without a manual click.
+
 ## 2026-05-27
 
 ### Widget
