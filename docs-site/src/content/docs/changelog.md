@@ -11,11 +11,14 @@ Reverse chronological. Dates are the date the change landed in production.
 
 - **Side-panel blends into your site** — the side-panel drawer now samples your page's background colour right at its edge and adopts it as its own surface, re-tinting smoothly as visitors scroll past differently-coloured sections. The old hard drop-shadow is gone, replaced by a hairline left border in a tone derived from your site — so the panel reads as a native part of the page, not a floating slab.
 - **Sharper on dark themes** — on dark sites the floating + bottom-bar widget surfaces now lift to a slightly lighter tone derived from your page background, so the widget stands out as raised chrome instead of melting into a dark background. Fully automatic, per-site.
-- **Float toggle on every layout** — the header dock/undock control now appears on all layouts. Floating + bottom-bar widgets expand into a side drawer; the side-panel pops out into a floating window. Visitors can move the chat to wherever suits them.
-- **Smoother side-panel animation** — the drawer now slides out on close to mirror its open, and never resizes mid-animation.
+- **Switch layouts from the chat header** — visitors can flip the widget between floating, bottom-bar, and side-panel on the fly using icon buttons in the header. Their choice persists across reloads (along with the open/closed state). Admins who want a fixed layout can turn on the new **Lock layout** option to hide the switcher.
+- **Mobile is always floating** — on phones (≤ 640px) the widget renders as the floating bubble (full-screen sheet on open) no matter which layout you picked; the layout switcher is hidden there. Side-panel and bottom-bar stay desktop-only. Your desktop layout is unchanged.
+- **Smoother side-panel close** — the drawer slides out to mirror its open, stays full-width through the animation, and the page content glides back in sync — no mid-animation shrink, no jerk.
 
 ### Dashboard
 
+- **Lock layout** — Settings → Appearance → Layout. When on, visitors can't switch layouts from the chat header and every reload keeps your chosen layout.
+- **Settings apply instantly** — saving widget settings (color, greeting, layout, lock, launcher) now busts the server-side config cache immediately, so live widgets reflect the change on the next page load instead of up to ~15s later.
 - **Transfer a site to another account** — Settings → Danger → **Transfer site**. Enter the destination account's email (verified live before you commit) and ownership moves over instantly; the widget keeps serving with no interruption or re-crawl.
 - **Live preview auto-opens** — switching the widget layout in Settings now opens the live preview in that layout immediately, so you see the change without a manual click.
 

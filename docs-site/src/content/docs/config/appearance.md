@@ -25,7 +25,21 @@ Right-edge drawer, full viewport height. The host page gets `margin-right` so it
 
 Best for: docs sites, support portals, app interfaces where the chat is a continuous co-pilot.
 
-You can switch layout per-site from the dashboard. The widget picks up the new layout on the next visitor session (no re-deploy needed).
+You set the default layout per-site from the dashboard, and the widget picks it up on the next visitor session (no re-deploy needed).
+
+### Switching layouts on the fly
+
+By default, visitors can switch between the three layouts themselves using the icon buttons in the chat header — handy for docking the chat into a side panel or popping it back to a floating bubble. Their choice persists in their browser, so a reload keeps the layout (and open/closed state) they last used.
+
+To pin a single layout and hide those buttons, turn on **Lock layout** (Settings → Appearance → Layout). A locked widget always renders the layout you chose and never shows a switcher.
+
+### Mobile
+
+On phones (viewport ≤ 640px) the widget always renders as the **floating bubble**, regardless of the layout you picked — side-panel and bottom-bar are desktop affordances. The launcher opens a full-screen sheet, and the layout switcher is hidden. Your desktop layout choice is untouched.
+
+### Live updates
+
+Saving any widget setting (color, greeting, layout, lock, launcher, …) takes effect on the next page load — the server cache is busted on save, so there's no waiting around for it to propagate.
 
 ## Primary color
 
