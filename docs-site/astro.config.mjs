@@ -64,6 +64,37 @@ export default defineConfig({
         },
         { tag: 'meta', attrs: { name: 'twitter:image', content: 'https://leflux.ai/docs/og.jpg' } },
         { tag: 'meta', attrs: { name: 'twitter:image:alt', content: 'LeFlux developer docs' } },
+        // ONE product theme across landing + dashboard + auth + docs. The app
+        // persists its choice in `leflux-theme` (light/dark/system); Starlight
+        // uses `starlight-theme` (light/dark/auto). Same origin (leflux.ai) ⇒
+        // shared localStorage, so on load we map the app's choice into
+        // Starlight's key + data-theme (default LIGHT to match the app), and a
+        // MutationObserver mirrors the docs' own toggle back into `leflux-theme`.
+        // A storage listener keeps a second open tab live. Runs before the
+        // widget script so the theme is settled early.
+        {
+          tag: 'script',
+          content: [
+            '(function(){',
+            "var APP='leflux-theme', SL='starlight-theme';",
+            "function toSL(t){return t==='system'?'auto':t;}",
+            "function fromSL(s){return s==='auto'?'system':s;}",
+            "function resolve(t){return t==='dark'?'dark':t==='light'?'light':(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}",
+            'function applyFromApp(){try{',
+            "var app=localStorage.getItem(APP)||'light';",
+            'localStorage.setItem(SL,toSL(app));',
+            'document.documentElement.dataset.theme=resolve(app);',
+            'if(window.StarlightThemeProvider&&StarlightThemeProvider.updatePickers)StarlightThemeProvider.updatePickers(toSL(app));',
+            '}catch(e){}}',
+            'applyFromApp();',
+            'try{new MutationObserver(function(){try{',
+            "var app=fromSL(localStorage.getItem(SL)||'auto');",
+            'if(localStorage.getItem(APP)!==app)localStorage.setItem(APP,app);',
+            "}catch(e){}}).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});}catch(e){}",
+            "window.addEventListener('storage',function(e){if(e.key===APP&&e.newValue)applyFromApp();});",
+            '})();',
+          ].join(''),
+        },
         // Dogfood the LeFlux widget on the docs themselves — every page gets
         // the live assistant (same-origin host, already an allowed site).
         // ORIGIN-RELATIVE on purpose: the SAME static build is served at both
