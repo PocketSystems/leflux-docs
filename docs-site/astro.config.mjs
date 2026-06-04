@@ -40,6 +40,9 @@ export default defineConfig({
         PageTitle: './src/components/PageTitle.astro',
         // Footer adds a LeFlux + Pocket Systems credit under the built-ins.
         Footer: './src/components/Footer.astro',
+        // Header logo/brand links to the marketing LANDING ("/") instead of the
+        // docs home (/docs/). Host-relative, so works on dev + prod.
+        SiteTitle: './src/components/SiteTitle.astro',
       },
       head: [
         // Open Graph + Twitter card so internal LeFlux dashboard /
