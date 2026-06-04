@@ -5,6 +5,12 @@ description: What's new in LeFlux.
 
 Reverse chronological. Dates are the date the change landed in production.
 
+## 2026-06-05
+
+### Widget
+
+- **Side-panel close polished**: closing the side panel now slides fully off screen in perfect sync with the page content returning to position. The close animation mirrors the open animation exactly, with no fade or lag.
+
 ## 2026-06-04
 
 ### Widget
