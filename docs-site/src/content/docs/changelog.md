@@ -14,6 +14,9 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Dark theme colors corrected**: the widget now correctly receives and applies your site's dark background color, so visitors on dark-themed sites see the right look straight away.
 - **Minimal nudge wraps correctly**: the "minimal" nudge tooltip now sizes itself to its message text and wraps at a natural width, instead of collapsing into a narrow sliver of one word per line.
 - **Side-panel works on full-screen layouts**: the side-panel now correctly shifts page content aside on sites where the entire page is rendered as a full-screen fixed wrapper, such as single-page apps and interactive portfolio sites. Content no longer slides behind the open panel.
+- **Live progress updates**: the agent now shows what it is doing during multi-step tasks instead of displaying a frozen spinner, so visitors can follow along as it navigates, clicks, and fills in forms.
+- **Long list responses collapse**: when the agent replies with more than eight list items, the extra entries tuck away behind a "Show N more" button, keeping the chat readable without hiding detail.
+- **Keyboard interaction**: the agent can now press keys such as Enter, Escape, Tab, and arrow keys to close modals, submit forms with keyboard shortcuts, and navigate keyboard-driven menus on your site.
 
 ### Dashboard
 
