@@ -30,6 +30,8 @@ Reverse chronological. Dates are the date the change landed in production.
 ### Server
 
 - **Smarter knowledge retrieval**: the assistant now finds answers by understanding the meaning of a visitor's question, not just by matching exact words. Asking "how much does it cost?" now surfaces your pricing content even when your page uses words like "fee", "plan", or "subscription" instead of "cost".
+- **Deeper context on large sites**: on sites with many pages, the assistant now pulls in more relevant pages before answering, so visitors get accurate answers even when similar topics appear across dozens or hundreds of pages.
+- **Clarifying questions instead of guesses**: when a visitor's request could match several different pages or actions and nothing clearly resolves it, the assistant now asks one short clarifying question instead of picking the wrong destination. Clear, specific requests are still answered directly.
 
 ## 2026-06-04
 
