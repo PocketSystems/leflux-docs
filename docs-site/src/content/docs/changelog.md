@@ -5,6 +5,12 @@ description: What's new in LeFlux.
 
 Reverse chronological. Dates are the date the change landed in production.
 
+## 2026-06-06
+
+### Dashboard
+
+- **Cleaner sign-in experience**: the login and signup forms now sit on a plain background. The decorative glow effect and texture pattern that previously appeared behind the form card have been removed for a cleaner, more focused look.
+
 ## 2026-06-05
 
 ### Widget
