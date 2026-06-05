@@ -10,6 +10,7 @@ Reverse chronological. Dates are the date the change landed in production.
 ### Widget
 
 - **Side-panel close polished**: closing the side panel now slides fully off screen in perfect sync with the page content returning to position. The close animation mirrors the open animation exactly, with no fade or lag.
+- **Smarter "what's new" answers**: asking the AI what changed or what's new now returns a real synthesized answer from the visible content, instead of a list of dates with a follow-up question about which one you meant.
 
 ## 2026-06-04
 
