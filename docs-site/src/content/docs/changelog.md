@@ -27,6 +27,10 @@ Reverse chronological. Dates are the date the change landed in production.
 - **AI and Behaviour settings**: a new tab in Settings gives you full control over how the assistant presents itself. Set a name, persona, and tone, write custom instructions, build a library of question-and-answer pairs, add knowledge snippets for accurate responses, and configure guardrails to keep conversations on topic. Changes are reflected on live widgets within seconds.
 - **Custom Q&A takes priority**: configured Q&A answers now reliably override any conflicting information detected from your site, so visitors always receive the exact response you wrote.
 
+### Server
+
+- **Smarter knowledge retrieval**: the assistant now finds answers by understanding the meaning of a visitor's question, not just by matching exact words. Asking "how much does it cost?" now surfaces your pricing content even when your page uses words like "fee", "plan", or "subscription" instead of "cost".
+
 ## 2026-06-04
 
 ### Widget
