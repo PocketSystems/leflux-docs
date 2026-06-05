@@ -16,6 +16,7 @@ Reverse chronological. Dates are the date the change landed in production.
 ### Dashboard
 
 - **Re-fetch site theme**: new button in Settings, Appearance lets you pull fresh brand colors from your site after a redesign, updating the widget instantly without triggering a full re-crawl.
+- **Smarter brand color detection**: the auto-detected widget color now reads from your site's actual accent surfaces such as buttons, links, call-to-action elements, icons, and CSS accent variables, not just backgrounds. Dark sites and accent-forward designs now get the right color automatically. The "Re-fetch site theme" button also reliably refreshes the color after a redesign, even when a color was previously auto-detected.
 
 ## 2026-06-04
 
