@@ -18,6 +18,7 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Re-fetch site theme**: new button in Settings, Appearance lets you pull fresh brand colors from your site after a redesign, updating the widget instantly without triggering a full re-crawl.
 - **Smarter brand color detection**: the auto-detected widget color now reads from your site's actual accent surfaces such as buttons, links, call-to-action elements, icons, and CSS accent variables, not just backgrounds. Dark sites and accent-forward designs now get the right color automatically. The "Re-fetch site theme" button also reliably refreshes the color after a redesign, even when a color was previously auto-detected.
 - **Settings preview matches the real side-panel**: the widget preview in Settings now shows the side-panel as a true docked drawer that pushes the page content left, matching exactly how visitors see it. The preview backdrop slides aside as the panel opens and returns when it closes, so you get an accurate picture of the final look before saving.
+- **Brand color accuracy refined**: the auto-detected brand color now skips very dark and very near-white shades, so only real accent tones are chosen. Sites where a dark surface like a navigation bar was being selected as the brand color will now get the correct accent color automatically.
 
 ## 2026-06-04
 
