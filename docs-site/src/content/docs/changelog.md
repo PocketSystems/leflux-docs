@@ -5,6 +5,13 @@ description: What's new in LeFlux.
 
 Reverse chronological. Dates are the date the change landed in production.
 
+## 2026-06-07
+
+### Widget
+
+- **Fixed: form tasks no longer cancelled by natural answers**: typing a response in natural language (including mixed-language replies) no longer accidentally cancels or skips the current task mid-flow. Only a deliberate cancel or skip instruction stops the task.
+- **Fixed: assistant keeps context across messages and reloads**: the assistant now maintains the full conversation throughout a session, resumes paused tasks correctly when you supply the requested information, and no longer re-asks what you want after a page reload or reconnection.
+
 ## 2026-06-06
 
 ### Dashboard
