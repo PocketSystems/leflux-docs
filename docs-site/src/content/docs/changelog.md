@@ -10,6 +10,7 @@ Reverse chronological. Dates are the date the change landed in production.
 ### Dashboard
 
 - **Cleaner sign-in experience**: the login and signup forms now sit on a plain background. The decorative glow effect and texture pattern that previously appeared behind the form card have been removed for a cleaner, more focused look.
+- **Accurate mobile preview in Settings**: switching the widget preview to Mobile now captures your site at a real mobile width, so the preview reflects the actual mobile layout instead of a cropped desktop view. Both Desktop and Mobile snapshots are prepared up front with a progress indicator, so toggling between them is instant once they are ready.
 
 ## 2026-06-05
 
