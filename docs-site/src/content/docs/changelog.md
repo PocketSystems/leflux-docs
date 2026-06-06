@@ -12,6 +12,7 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Cleaner sign-in experience**: the login and signup forms now sit on a plain background. The decorative glow effect and texture pattern that previously appeared behind the form card have been removed for a cleaner, more focused look.
 - **Accurate mobile preview in Settings**: switching the widget preview to Mobile now captures your site at a real mobile width, so the preview reflects the actual mobile layout instead of a cropped desktop view. Both Desktop and Mobile snapshots are prepared up front with a progress indicator, so toggling between them is instant once they are ready.
 - **Sharper desktop preview**: the desktop preview in Settings now renders at 2K (retina) resolution, so the screenshot stays crisp and detailed on high-density displays.
+- **Desktop preview at natural proportions**: the desktop preview in Settings now captures at a Full HD viewport, so site text and layouts appear at the same proportions as on a real desktop monitor. Previously a narrower viewport caused text to look oversized in the preview.
 - **Roomier mobile preview**: the mobile preview now uses a wider viewport matching a larger class of modern phones, giving previewed layouts more breathing room and a less cramped appearance.
 - **Profile photo in dashboard**: your Google profile photo now appears as your avatar in the navigation sidebar, with your initial shown as a fallback when no photo is available.
 
