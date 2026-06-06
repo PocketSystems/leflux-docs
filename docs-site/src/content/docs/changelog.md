@@ -15,6 +15,10 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Desktop preview at natural proportions**: the desktop preview in Settings now captures at a Full HD viewport, so site text and layouts appear at the same proportions as on a real desktop monitor. Previously a narrower viewport caused text to look oversized in the preview.
 - **Roomier mobile preview**: the mobile preview now uses a wider viewport matching a larger class of modern phones, giving previewed layouts more breathing room and a less cramped appearance.
 - **Profile photo in dashboard**: your Google profile photo now appears as your avatar in the navigation sidebar, with your initial shown as a fallback when no photo is available.
+- **AI & Behaviour tab in site navigation**: the AI & Behaviour settings now appear as a top-level tab in the site navigation, so you can reach assistant configuration directly without going through the Settings sub-tabs.
+- **Re-fetch theme refreshes the live preview**: clicking "Re-fetch site theme" now also rebuilds the desktop and mobile preview screenshots, so the updated colors are visible in the preview panel immediately without leaving the page.
+- **Profile photo on Account page**: your Google profile photo now appears on your Account page alongside your account details.
+- **Crisper cards on light backgrounds**: dashboard cards now display a more defined shadow on light-mode backgrounds, so they stand out clearly rather than blending into the page.
 
 ## 2026-06-05
 
