@@ -20,6 +20,7 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Profile photo on Account page**: your Google profile photo now appears on your Account page alongside your account details.
 - **Crisper cards on light backgrounds**: dashboard cards now display a more defined shadow on light-mode backgrounds, so they stand out clearly rather than blending into the page.
 - **Plan label corrected on Sites overview**: the Plan badge on your Sites overview now shows your actual plan (Pro, Studio, or "No plan" when unsubscribed) instead of always displaying "Free".
+- **Crawl progress shows real page counts**: when a site is being scanned, the progress panel now displays "Found N pages" and a live "Scanning · X of N" count right away instead of sitting at zero while the first pages load. The bar fills as pages are discovered and completes when the scan finishes.
 
 ### Landing
 
