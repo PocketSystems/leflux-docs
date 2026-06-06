@@ -19,6 +19,7 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Re-fetch theme refreshes the live preview**: clicking "Re-fetch site theme" now also rebuilds the desktop and mobile preview screenshots, so the updated colors are visible in the preview panel immediately without leaving the page.
 - **Profile photo on Account page**: your Google profile photo now appears on your Account page alongside your account details.
 - **Crisper cards on light backgrounds**: dashboard cards now display a more defined shadow on light-mode backgrounds, so they stand out clearly rather than blending into the page.
+- **Plan label corrected on Sites overview**: the Plan badge on your Sites overview now shows your actual plan (Pro, Studio, or "No plan" when unsubscribed) instead of always displaying "Free".
 
 ### Landing
 
