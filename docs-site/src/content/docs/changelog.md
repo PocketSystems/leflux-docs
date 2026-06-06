@@ -20,6 +20,25 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Profile photo on Account page**: your Google profile photo now appears on your Account page alongside your account details.
 - **Crisper cards on light backgrounds**: dashboard cards now display a more defined shadow on light-mode backgrounds, so they stand out clearly rather than blending into the page.
 
+### Landing
+
+- **Account menu in the site header**: when you are signed in, a personalized avatar and dropdown now appear in the navigation header with quick links to your dashboard, sites, analytics, billing, and settings.
+- **Sign in and free trial from the mobile menu**: the hamburger menu on mobile now includes Sign in and Start free trial buttons, so visitors on phones can jump in without hunting for header controls.
+- **Theme switcher in the mobile menu**: the light/dark/system selector has moved from the mobile header into the hamburger menu, keeping the header uncluttered on phones. Changing the theme from the drawer shows the result live without closing the menu.
+- **Consistent theme across all pages**: your light, dark, or system preference now applies to the homepage, dashboard, sign-in, and docs in sync. A change in one part of the product is reflected everywhere instantly.
+- **Opaque mobile menu**: the mobile navigation drawer is now fully solid, so page content no longer bleeds through behind the open menu.
+
+### Billing
+
+- **Native billing controls**: you can now see your card on file and cancel or resume your subscription directly on the Billing page, without being redirected to an external site. Card updates still open the secure payment portal.
+- **Cleaner cancel confirmation**: cancelling a subscription now shows a focused dialog with details of what will change, replacing the basic browser prompt.
+- **Trial is once per account**: the free trial applies to your first subscription only. Returning subscribers go straight to the paid plan without a repeated trial period.
+- **Subscription status banner**: a dismissible banner in the app lets you know when your trial or subscription is nearing its end, and prompts you to reactivate if your plan has lapsed and your sites are paused.
+- **Fixed: paid users shown as free after checkout**: accounts that had successfully paid were in some cases still treated as free or directed back to checkout. This has been corrected.
+- **Fixed: billing management link always works**: the billing management link now reliably opens for all active subscribers, including accounts that completed payment recently.
+- **Fixed: spinner no longer sticks after leaving checkout**: navigating back from the billing checkout page no longer leaves a stuck loading spinner on the billing button.
+- **Fixed: post-upgrade redirect goes to dashboard**: completing an upgrade now takes you to your dashboard instead of the billing page.
+
 ## 2026-06-05
 
 ### Widget
