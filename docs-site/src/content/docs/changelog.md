@@ -5,6 +5,46 @@ description: What's new in LeFlux.
 
 Reverse chronological. Dates are the date the change landed in production.
 
+## 2026-06-23
+
+### Widget
+
+- **Talk-to-human button**: Visitors can now request a live agent from within the chat. When an agent joins, a live banner appears; when the agent ends the session the AI picks back up automatically.
+- **AI co-replies during live handoff**: The AI continues answering visitor questions alongside the human agent by default. Agents can silence it at any time from the dashboard.
+- **Email replies appear in the chat thread**: When a visitor returns after going offline, agent email replies sent while they were away appear inline in the chat, keeping the conversation continuous.
+- **Offline visitor reconnects to an available agent**: A visitor who hit the no-agent offline path is automatically offered a live connection as soon as an agent becomes available and they send another message.
+- **Screen reader support**: AI and agent messages are now announced by screen readers; the launcher button correctly reports its open or closed state to assistive technology; the chat panel has a proper dialog role and label.
+- **Follow-up email highlighted**: When a visitor leaves their contact address in the offline flow, the address is shown in bold in the confirmation message so they can easily verify what was recorded.
+- **Warmer AI handoff message**: The AI's message when a visitor requests human help now stays warm and open-ended, reminding them the AI is available any time to keep helping.
+- **Chat header icon fix on light themes**: The handoff icon in the chat header now appears white on light-themed sites, consistent with the other header icons.
+- **AI typing visible when co-replying**: When the AI is answering alongside a human agent, the thinking indicator reappears. Agent and AI typing indicators merge into one combined animation.
+- **"Connecting..." clears when agent joins**: The connecting status disappears as soon as an agent joins, rather than staying on screen permanently.
+- **Composer stays active in live mode**: The message input no longer becomes unresponsive after sending during a live handoff.
+- **No thinking dots when AI is muted**: The AI thinking animation is suppressed when the agent has turned AI co-reply off, removing the misleading "Still thinking..." hint.
+
+### Dashboard
+
+- **Support inbox**: A new Support section lets agents claim visitor handoff requests, reply in real time, and hand back to the AI when done. Includes presence indicators, browser notifications, and an AI copilot with suggest, summarize, and ask tools.
+- **Email and offline inbox**: Offline visitors and visitors who leave mid-chat now appear in an "Email and offline" inbox. Agents reply by email from the same thread, and visitor replies come back in automatically.
+- **Edit or delete AI and agent messages**: Agents can correct or remove an AI or agent message directly in the support thread. The visitor sees the update immediately.
+- **AI auto-reply off by default**: When an agent claims a chat, AI auto-reply starts off so the agent handles the conversation solo. It can be turned back on at any time from the thread.
+- **Accurate presence in the queue**: The queue shows "Live" only while the visitor is actively online, and "Away" if they have stepped away, so agents always see the correct status.
+- **Visitor-left state in thread**: When a visitor leaves mid-chat, the thread shows a clear "visitor has left" notice with a Close button instead of an unresponsive composer.
+- **Copilot answers render formatted**: AI Copilot answers and summaries now display with proper formatting including bullets, bold, code blocks, and line breaks.
+- **Chat thread renders markdown**: Messages and AI suggestions in the support thread now show formatted text instead of raw markdown symbols.
+- **AI suggestions suppressed when AI is co-replying**: Auto-generated reply suggestions are only produced when AI auto-reply is off, preventing duplicate responses appearing side by side.
+- **Stale and orphaned handoffs cleared from queue**: Visitors who have been inactive for several minutes, and handoffs left over from unexpected restarts, are automatically removed from the live queue.
+- **Support thread layout tidied**: Extra blank space below the message composer has been removed.
+- **"Close this chat" danger styling**: The close button now uses a destructive style to reduce the chance of accidental closes.
+
+### Server
+
+- **Resolution email on close**: When an agent closes a live chat or email thread and the visitor's contact address is on record, the visitor automatically receives a branded confirmation that everything is wrapped up. Replying to the email reopens the thread.
+- **Offline lead emails**: Visitors who leave a contact address when no agent is available receive a branded acknowledgement email, and the site owner and agents receive an alert that a lead is waiting.
+- **One notification per offline session**: Repeating a handoff request while no agent is available no longer triggers multiple notification emails; only one is sent per offline session.
+- **Polished transactional email design**: Notification emails now use a branded design with a gradient header, bold headline, and a clear call-to-action.
+- **AI speaks as the business**: The AI now uses "we," "our," and "us" when referring to the business rather than detached phrases, giving responses a more natural and ownership-forward tone.
+
 ## 2026-06-07
 
 ### Widget
