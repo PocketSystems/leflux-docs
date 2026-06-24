@@ -5,6 +5,17 @@ description: What's new in LeFlux.
 
 Reverse chronological. Dates are the date the change landed in production.
 
+## 2026-06-24
+
+### Landing
+
+- **Human Handoff section redesigned**: The homepage handoff section has been rebuilt as a live, animated two-panel demo. The visitor's chat widget and your team's support inbox appear side by side on a distinct tinted background, connected by a wire with a traveling spark. Typing indicators appear before each message, the AI identity morphs to a human agent when the handoff occurs, and a live badge lights up in the inbox. The demo now runs reliably from first visit and respects reduced-motion preferences. Both panels are clearly labelled so the agent view is unmistakable.
+
+### Billing
+
+- **Plan card buttons aligned**: Call-to-action buttons on pricing cards now sit at the bottom of each card, keeping them visually level across plans that have different numbers of feature items.
+- **Monthly billing only**: The annual/monthly billing toggle has been removed from pricing and the billing page. All plans are currently billed monthly.
+
 ## 2026-06-23
 
 ### Widget
