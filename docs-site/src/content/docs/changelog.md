@@ -5,6 +5,17 @@ description: What's new in LeFlux.
 
 Reverse chronological. Dates are the date the change landed in production.
 
+## 2026-07-02
+
+### Landing
+
+- **Live Playground**: a new interactive demo on the homepage lets visitors paste their own website's URL and watch LeFlux operate a live preview of that exact site, with a chat widget already installed and themed to match the site's own brand colors. Visitors can keep chatting to see the assistant answer questions and navigate pages before signing up, on both desktop and mobile views.
+- **Playground takes center stage**: the live demo now sits directly under the homepage headline, so visitors can try it right away instead of scrolling to find it.
+- **More accurate demo answers**: the assistant in the live demo now answers exactly what was asked, avoids repeating a previous answer, and reliably navigates to the right page for requests like "show me pricing" instead of just describing it.
+- **Clear message when a site can't be previewed**: if a website can't be loaded for the live demo (for example, it blocks automated visits), the playground now shows a clear explanation and a way to try again instead of an endless loading state.
+- **Invitation to start a trial**: after a few messages in the live demo, visitors are invited to start a free trial to keep exploring.
+- **"Fork in the road" problem section**: the homepage's problem section has been redesigned to visually contrast losing a visitor with an old style widget against capturing them with LeFlux, with a smoother, more reliable animation as you scroll to it.
+
 ## 2026-06-24
 
 ### Landing
