@@ -5,6 +5,13 @@ description: What's new in LeFlux.
 
 Reverse chronological. Dates are the date the change landed in production.
 
+## 2026-07-03
+
+### Widget
+
+- **Highlighted form fields**: When the assistant asks you to fill in a field, it now draws a clear highlight ring and a callout pointing right at that field, staying perfectly aligned even as the page scrolls or the layout shifts.
+- **Fills in more kinds of form fields**: The assistant can now fill in many more field types beyond plain text boxes, including toggles, sliders, star ratings, date and color pickers, custom dropdowns, autocomplete boxes, and rich text editors.
+
 ## 2026-07-02
 
 ### Landing
