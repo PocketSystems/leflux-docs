@@ -38,7 +38,7 @@ export default defineConfig({
         // Override the page title so install-guide pages show the colored
         // platform logo next to the H1.
         PageTitle: './src/components/PageTitle.astro',
-        // Footer adds a LeFlux + Pocket Systems credit under the built-ins.
+        // Footer adds a LeFlux credit under the built-ins.
         Footer: './src/components/Footer.astro',
         // Header logo/brand links to the marketing LANDING ("/") instead of the
         // docs home (/docs/). Host-relative, so works on dev + prod.

@@ -85,5 +85,5 @@ That is the right place for anything LeFlux related: docs fixes, widget bugs, in
 ---
 
 <p align="center">
-  Built by <a href="https://github.com/PocketSystems">PocketSystems</a> · <a href="https://leflux.xrlabs.app">leflux.xrlabs.app</a>
+  <a href="https://leflux.xrlabs.app">leflux.xrlabs.app</a>
 </p>
