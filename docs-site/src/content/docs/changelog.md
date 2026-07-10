@@ -13,6 +13,7 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Redesigned media viewer on page detail**: Clicking an image on a page's Media tab now opens a full screen viewer with next/previous navigation, a thumbnail strip, captions, and support for videos, instead of a small static grid.
 - **Live crawl progress no longer disappears**: The live scanning panel on your site's dashboard no longer vanishes partway through a scan. It now stays visible and accurate until the crawl finishes.
 - **Deleting a site now fully removes its data**: Removing a site from your dashboard now cleans up everything associated with it, including its pages, chat sessions, and scan history, instead of leaving leftover data behind.
+- **Fixed: deleting a site no longer fails**: The delete option in site Settings now completes reliably instead of returning an error and leaving the site in place.
 
 ### Server
 
