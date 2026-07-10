@@ -5,6 +5,32 @@ description: What's new in LeFlux.
 
 Reverse chronological. Dates are the date the change landed in production.
 
+## 2026-07-10
+
+### Dashboard
+
+- **Image gallery on the Knowledge page**: The "Images" count on your Knowledge page is now clickable and opens a full screen gallery of every image found across your whole site, with a link back to the page each one came from.
+- **Redesigned media viewer on page detail**: Clicking an image on a page's Media tab now opens a full screen viewer with next/previous navigation, a thumbnail strip, captions, and support for videos, instead of a small static grid.
+- **Live crawl progress no longer disappears**: The live scanning panel on your site's dashboard no longer vanishes partway through a scan. It now stays visible and accurate until the crawl finishes.
+
+### Server
+
+- **More reliable full-site crawling**: Sites that redirect from their bare domain to "www" (or the other way around) are now crawled completely, instead of stopping after a single page.
+- **Crawls no longer collide**: Starting a scan twice in a row (for example, by clicking twice) no longer runs two scans at once and slowing each other down.
+- **Cleaner formatting for long answers**: Long lists of details, like plan features or specifications, are now automatically formatted into readable bullet points instead of a dense run-on paragraph.
+- **Always a way to reach a human**: If the assistant can't complete a task after several tries, it now always offers to connect you with a person on your team instead of ending the conversation.
+- **Smarter answers by business type**: The assistant now automatically adapts its guidance for restaurants, clinics, stores, real estate, education, and legal sites, for example steering toward reservations, appointments, or stock questions as appropriate.
+- **More complete answers on long pages**: The assistant is now better at finding and including key details like prices, hours, and contact info buried in the middle of long pages, and keeps more of the conversation in mind so it doesn't forget details a visitor already shared.
+- **Accurate form submission confirmations**: The assistant now checks whether a form actually submitted successfully before telling a visitor it worked, and says so honestly if it couldn't confirm or if it failed.
+- **Fewer repeated questions**: The assistant now accepts a visitor's answer after two failed attempts instead of asking again indefinitely, and no longer sends duplicate messages when the same message is submitted twice by accident.
+- **Friendlier form validation**: Numeric answers, like a budget or quantity, are now accepted correctly, and validation messages always use plain, friendly field names instead of raw internal labels.
+- **Faster multi-step tasks**: Tasks that need several steps, like filling out a form, now complete in fewer round trips, so the assistant responds faster.
+
+### Landing
+
+- **Smarter live demo**: The interactive homepage demo no longer re-asks for details you've already given, presents multiple matching results as tappable buttons instead of a wall of text, and only asks you to tap a button when one is actually available in the demo.
+- **Faster homepage load**: The homepage now loads faster on first visit thanks to a leaner initial page.
+
 ## 2026-07-03
 
 ### Widget
