@@ -7,6 +7,14 @@ Reverse chronological. Dates are the date the change landed in production.
 
 ## 2026-07-11
 
+### Dashboard
+
+- **Platform badge on your sites**: Site cards and your site's overview page now show which platform your site is built on, such as Shopify, Framer, or Webflow, with a link to that platform's docs. Nothing shows if the platform can't be confidently detected.
+
+### Onboarding
+
+- **Platform detected during setup**: While scanning your site during setup, LeFlux now detects and displays which platform it's built on.
+
 ### Server
 
 - **Fixed: deleted or cancelled scans now fully stop**: Deleting a site while it was still being scanned, or cancelling a scan from the dashboard, now stops the crawl immediately. Previously the scan could keep running in the background afterward, and could even bring back data for a site you had just deleted.
