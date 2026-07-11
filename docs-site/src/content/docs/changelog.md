@@ -18,6 +18,7 @@ Reverse chronological. Dates are the date the change landed in production.
 ### Server
 
 - **Fixed: deleted or cancelled scans now fully stop**: Deleting a site while it was still being scanned, or cancelling a scan from the dashboard, now stops the crawl immediately. Previously the scan could keep running in the background afterward, and could even bring back data for a site you had just deleted.
+- **Faster, more complete scans for Shopify stores**: When LeFlux detects that your site runs on Shopify, it now pulls your full product catalog directly instead of loading every product page one by one. Scans finish much faster and cover your entire catalog, including stores with thousands of products and variants.
 
 ## 2026-07-10
 
