@@ -10,6 +10,7 @@ Reverse chronological. Dates are the date the change landed in production.
 ### Dashboard
 
 - **Platform badge on your sites**: Site cards and your site's overview page now show which platform your site is built on, such as Shopify, Framer, or Webflow, with a link to that platform's docs. Nothing shows if the platform can't be confidently detected.
+- **Platform-specific install instructions**: The install guide link and snippet card now match your detected platform. For Shopify, Framer, or Webflow sites, you'll see exactly where to paste the install snippet on that platform, plus a link to LeFlux's own install guide for it, instead of a generic guide.
 
 ### Onboarding
 
