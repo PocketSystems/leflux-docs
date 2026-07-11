@@ -5,6 +5,12 @@ description: What's new in LeFlux.
 
 Reverse chronological. Dates are the date the change landed in production.
 
+## 2026-07-11
+
+### Server
+
+- **Fixed: deleted or cancelled scans now fully stop**: Deleting a site while it was still being scanned, or cancelling a scan from the dashboard, now stops the crawl immediately. Previously the scan could keep running in the background afterward, and could even bring back data for a site you had just deleted.
+
 ## 2026-07-10
 
 ### Dashboard
