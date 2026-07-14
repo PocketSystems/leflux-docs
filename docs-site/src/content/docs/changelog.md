@@ -5,6 +5,16 @@ description: What's new in LeFlux.
 
 Reverse chronological. Dates are the date the change landed in production.
 
+## 2026-07-14
+
+### Widget
+
+- **Fixed: a stalled reply no longer hangs on "Loading"**: If a reply started streaming in but then stalled partway through, the chat could get stuck spinning on a half-finished message. It now automatically wraps up with what it has, and if the reply was clearly cut off, invites you to retry.
+
+### Server
+
+- **More detailed shopping answers**: When a visitor asks to see products, get recommendations, or compare options, in English or Roman Urdu, the assistant now gives a more thorough, correctly worded answer. Quick greetings and simple questions continue to get fast responses.
+
 ## 2026-07-11
 
 ### Dashboard
