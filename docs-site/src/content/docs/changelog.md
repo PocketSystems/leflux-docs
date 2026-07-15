@@ -18,6 +18,10 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Better help with forms and inquiries**: When a visitor asks about contacting you, making an inquiry, or booking, the assistant now gives a more thorough, helpful answer and offers to fill out and submit the form for them, instead of simply pointing to a contact page.
 - **More reliable replies in non-English conversations**: When a conversation is in a language other than English, the assistant now replies consistently in that same language throughout the chat.
 
+### Landing
+
+- **Native mobile view for the live playground**: On a phone, the homepage's live playground now shows one clean, full-bleed mobile experience instead of a shrunken desktop browser frame with a fake phone bezel inside it. Chat now opens as a proper bottom sheet you can drag, and minimizes down to a small floating bubble, just like the real LeFlux widget on mobile. Desktop and tablet views are unchanged.
+
 ## 2026-07-14
 
 ### Widget
