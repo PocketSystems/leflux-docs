@@ -5,6 +5,19 @@ description: What's new in LeFlux.
 
 Reverse chronological. Dates are the date the change landed in production.
 
+## 2026-07-15
+
+### Widget
+
+- **Consent checkboxes are ticked automatically**: When the assistant fills out a form on your site, it now automatically ticks any required "I agree" or consent checkbox before submitting, including consent checkboxes that are custom styled and were previously invisible to it. Marketing opt-in checkboxes, like a newsletter signup, are left unchecked so visitors choose those themselves.
+- **More accurate form selection**: When a page has more than one form, the assistant now reliably fills out the right one, such as your contact form, rather than a newsletter signup or search box.
+- **Fills forms built without a standard form element**: The assistant can now detect and fill contact, booking, and quote forms built from styled page sections rather than a standard form element, so more sites' forms work out of the box.
+
+### Server
+
+- **Better help with forms and inquiries**: When a visitor asks about contacting you, making an inquiry, or booking, the assistant now gives a more thorough, helpful answer and offers to fill out and submit the form for them, instead of simply pointing to a contact page.
+- **More reliable replies in non-English conversations**: When a conversation is in a language other than English, the assistant now replies consistently in that same language throughout the chat.
+
 ## 2026-07-14
 
 ### Widget
