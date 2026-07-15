@@ -12,6 +12,7 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Consent checkboxes are ticked automatically**: When the assistant fills out a form on your site, it now automatically ticks any required "I agree" or consent checkbox before submitting, including consent checkboxes that are custom styled and were previously invisible to it. Marketing opt-in checkboxes, like a newsletter signup, are left unchecked so visitors choose those themselves.
 - **More accurate form selection**: When a page has more than one form, the assistant now reliably fills out the right one, such as your contact form, rather than a newsletter signup or search box.
 - **Fills forms built without a standard form element**: The assistant can now detect and fill contact, booking, and quote forms built from styled page sections rather than a standard form element, so more sites' forms work out of the box.
+- **Fixed: forms with a field named "name" are found correctly**: A form containing a field literally named "name" could previously fail to be detected at all, causing the assistant to tell visitors to email you instead of filling out the form. It's now detected and filled like any other form.
 
 ### Server
 
