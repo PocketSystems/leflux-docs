@@ -15,7 +15,7 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'LeFlux',
-      description: 'Give your website hands. Developer docs for the LeFlux AI agent — it answers visitors, opens the right page, fills forms, and books meetings. Install, configure, and extend in one line of code.',
+      description: 'Your visitors ask, LeFlux does. Developer docs for the LeFlux AI agent that answers visitors, opens the right page, fills forms, and books meetings. Install, configure, and extend in one line of code.',
       logo: {
         src: './src/assets/logo.svg',
         replacesTitle: false,

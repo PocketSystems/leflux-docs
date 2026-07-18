@@ -1,11 +1,11 @@
 /* LeFlux Docs — brand theme matching the LeFlux landing page.
-   Cream + warm ink + signature orange accent (#ee5a30). No purple. */
+   Cream + warm ink + signature orange accent (#F14E0A). No purple. */
 
 /* DARK (Starlight default) — landing's dark palette (#0e1119 bg). */
 :root {
   --sl-color-accent-low:  #3a1a0e;
-  --sl-color-accent:      #ee5a30;
-  --sl-color-accent-high: #fbcdb9;
+  --sl-color-accent:      #F14E0A;
+  --sl-color-accent-high: #FDD3BE;
   --sl-color-white:       #f6f4ef;
   --sl-color-gray-1:      #e7e3da;
   --sl-color-gray-2:      #c3bfb4;
@@ -22,9 +22,9 @@
 
 /* LIGHT — landing's cream palette (#f8f5ed bg, #11141d ink). */
 :root[data-theme="light"] {
-  --sl-color-accent-low:  #fbe3d7;
-  --sl-color-accent:      #ee5a30;
-  --sl-color-accent-high: #c43d18;
+  --sl-color-accent-low:  #FDE3D3;
+  --sl-color-accent:      #F14E0A;
+  --sl-color-accent-high: #C23600;
   --sl-color-white:       #11141d;
   --sl-color-gray-1:      #2a2d36;
   --sl-color-gray-2:      #3d4252;
