@@ -13,6 +13,11 @@ Reverse chronological. Dates are the date the change landed in production.
 - **New fox mascot logo and refreshed brand colors**: LeFlux now has a new fox mascot logo and a refreshed vivid orange color palette, updated across the homepage, dashboard, and chat widget, including the browser tab icon and social sharing preview image.
 - **Fox badge on the homepage hero**: A small fox brand badge now floats over the chat preview in the homepage hero, reinforcing the new look. It reads clearly on both light and dark themes and appears on desktop views.
 - **Fox watermark in the homepage hero**: The floating fox badge in the homepage hero has been replaced with a large, subtle fox watermark in the background, reinforcing the new brand look without competing with the page content. It reads clearly on both light and dark themes and appears on desktop views.
+- **Sticky, frosted navigation bar**: The homepage navigation bar now stays visible as you scroll, with a frosted glass look, and the hero's fox watermark continues seamlessly behind it.
+- **Hover underline on navigation links**: Navigation links in the homepage header now show a directional orange underline animation on hover.
+- **"Try it live" hero button**: The homepage hero's main button now reads "Try it live" and scrolls straight to the interactive playground; the hero is also taller to give it more room.
+- **More spacious homepage layout**: Vertical spacing across homepage sections has been opened up for a cleaner, less cramped feel.
+- **Footer logo resized**: The fox logo in the footer has been resized to better align with the tagline text next to it.
 
 ## 2026-07-15
 
