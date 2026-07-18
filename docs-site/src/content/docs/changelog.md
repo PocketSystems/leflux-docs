@@ -10,6 +10,7 @@ Reverse chronological. Dates are the date the change landed in production.
 ### Landing
 
 - **New homepage tagline**: The hero headline now reads "Your visitors ask. LeFlux does.", putting the focus on the assistant taking action for your visitors, not just chatting with them. The new line appears everywhere the old tagline did, including the footer and social sharing previews.
+- **New fox mascot logo and refreshed brand colors**: LeFlux now has a new fox mascot logo and a refreshed vivid orange color palette, updated across the homepage, dashboard, and chat widget, including the browser tab icon and social sharing preview image.
 
 ## 2026-07-15
 
