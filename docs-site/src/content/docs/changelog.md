@@ -18,6 +18,7 @@ Reverse chronological. Dates are the date the change landed in production.
 - **"Try it live" hero button**: The homepage hero's main button now reads "Try it live" and scrolls straight to the interactive playground; the hero is also taller to give it more room.
 - **More spacious homepage layout**: Vertical spacing across homepage sections has been opened up for a cleaner, less cramped feel.
 - **Footer logo resized**: The fox logo in the footer has been resized to better align with the tagline text next to it.
+- **Hero watermark removed**: The large fox watermark in the homepage hero background has been removed for a cleaner look. The frosted sticky navigation, hover underline links, "Try it live" button, and spacious section layout are unchanged.
 
 ## 2026-07-15
 
