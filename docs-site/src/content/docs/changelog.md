@@ -12,6 +12,7 @@ Reverse chronological. Dates are the date the change landed in production.
 - **New homepage tagline**: The hero headline now reads "Your visitors ask. LeFlux does.", putting the focus on the assistant taking action for your visitors, not just chatting with them. The new line appears everywhere the old tagline did, including the footer and social sharing previews.
 - **New fox mascot logo and refreshed brand colors**: LeFlux now has a new fox mascot logo and a refreshed vivid orange color palette, updated across the homepage, dashboard, and chat widget, including the browser tab icon and social sharing preview image.
 - **Fox badge on the homepage hero**: A small fox brand badge now floats over the chat preview in the homepage hero, reinforcing the new look. It reads clearly on both light and dark themes and appears on desktop views.
+- **Fox watermark in the homepage hero**: The floating fox badge in the homepage hero has been replaced with a large, subtle fox watermark in the background, reinforcing the new brand look without competing with the page content. It reads clearly on both light and dark themes and appears on desktop views.
 
 ## 2026-07-15
 
