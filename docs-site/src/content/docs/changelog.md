@@ -12,6 +12,7 @@ Reverse chronological. Dates are the date the change landed in production.
 - **New welcome screen styles**: Your chat widget's welcome screen now offers five different looks to choose from: minimal, avatar, suggestions, gradient, or cards, plus editable suggested prompts shown to visitors when the chat opens.
 - **Welcome screens now animate in**: All five welcome screen styles feel more alive: the icon, title, subtitle, and prompts now ease in one after another when the chat opens, and icons, avatars, cards, and buttons get subtle glowing and lift effects on hover. Visitors who prefer reduced motion see a simple, static version instead. The live preview in your dashboard now shows these same effects.
 - **Friendlier default suggested prompts**: If you haven't customized your welcome screen's suggested prompts, visitors now see informational starters like "How does it work?" and "What does it cost?" instead of prompts like "Book a demo" or "Talk to a human," which assumed every site takes bookings.
+- **Neutral "thinking" messages on every kind of site**: While the assistant is working on a reply, the short status messages it shows, like "Thinking" or "Looking that up," are no longer written as if every site were an online store. Shopping phrases such as "Checking the shelves" have been replaced with wording that fits any site, whether it's a store, a blog, a portfolio, or a SaaS product.
 
 ### Dashboard
 
