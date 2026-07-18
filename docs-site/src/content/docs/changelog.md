@@ -21,6 +21,7 @@ Reverse chronological. Dates are the date the change landed in production.
 ### Server
 
 - **Assistant no longer claims to submit a form that doesn't exist**: If a visitor asks to book, enquire, or get in touch and your site has no real form for that, the assistant now says so plainly and offers a genuine next step, such as a signup link or your contact email, instead of pretending to collect and submit their details.
+- **Real clickable buttons instead of empty promises**: When there's no form to fill out, the assistant now offers visitors a genuine clickable button, such as a link to your signup or contact page, instead of saying it will "take you there" without actually going anywhere.
 
 ### Landing
 
