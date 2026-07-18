@@ -10,6 +10,7 @@ Reverse chronological. Dates are the date the change landed in production.
 ### Widget
 
 - **New welcome screen styles**: Your chat widget's welcome screen now offers five different looks to choose from: minimal, avatar, suggestions, gradient, or cards, plus editable suggested prompts shown to visitors when the chat opens.
+- **Welcome screens now animate in**: All five welcome screen styles feel more alive: the icon, title, subtitle, and prompts now ease in one after another when the chat opens, and icons, avatars, cards, and buttons get subtle glowing and lift effects on hover. Visitors who prefer reduced motion see a simple, static version instead. The live preview in your dashboard now shows these same effects.
 
 ### Dashboard
 
