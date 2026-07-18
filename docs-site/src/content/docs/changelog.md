@@ -5,6 +5,12 @@ description: What's new in LeFlux.
 
 Reverse chronological. Dates are the date the change landed in production.
 
+## 2026-07-18
+
+### Landing
+
+- **New homepage tagline**: The hero headline now reads "Your visitors ask. LeFlux does.", putting the focus on the assistant taking action for your visitors, not just chatting with them. The new line appears everywhere the old tagline did, including the footer and social sharing previews.
+
 ## 2026-07-15
 
 ### Widget
