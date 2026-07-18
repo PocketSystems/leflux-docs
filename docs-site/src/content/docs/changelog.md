@@ -7,6 +7,14 @@ Reverse chronological. Dates are the date the change landed in production.
 
 ## 2026-07-18
 
+### Widget
+
+- **New welcome screen styles**: Your chat widget's welcome screen now offers five different looks to choose from: minimal, avatar, suggestions, gradient, or cards, plus editable suggested prompts shown to visitors when the chat opens.
+
+### Dashboard
+
+- **Choose your welcome screen style with a live preview**: A new widget appearance setting lets you pick your chat widget's welcome screen style and edit its suggested prompts, with an instant live preview showing exactly how each style looks before you save.
+
 ### Landing
 
 - **New homepage tagline**: The hero headline now reads "Your visitors ask. LeFlux does.", putting the focus on the assistant taking action for your visitors, not just chatting with them. The new line appears everywhere the old tagline did, including the footer and social sharing previews.
