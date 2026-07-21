@@ -57,7 +57,7 @@ export default defineConfig({
         { tag: 'meta', attrs: { property: 'og:image:width', content: '1200' } },
         { tag: 'meta', attrs: { property: 'og:image:height', content: '630' } },
         { tag: 'meta', attrs: { property: 'og:image:alt', content: 'LeFlux developer docs — add AI chat in one line of code' } },
-        { tag: 'meta', attrs: { name: 'theme-color', content: '#ee5a30' } },
+        { tag: 'meta', attrs: { name: 'theme-color', content: '#F14E0A' } },
         {
           tag: 'meta',
           attrs: { name: 'twitter:card', content: 'summary_large_image' },
