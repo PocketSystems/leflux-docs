@@ -17,6 +17,7 @@ Reverse chronological. Dates are the date the change landed in production.
 ### Dashboard
 
 - **Accurate active users**: The Dashboard now correctly shows how many users are actively viewing your site in real time.
+
 ## 2026-07-18
 
 ### Widget
