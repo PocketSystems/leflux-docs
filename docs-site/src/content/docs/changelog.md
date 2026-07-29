@@ -5,6 +5,17 @@ description: What's new in LeFlux.
 
 Reverse chronological. Dates are the date the change landed in production.
 
+
+## 2026-07-29
+
+### Widget
+- **Always has an answer** The widget will try harder to respond instead of just showing nothing.
+- **No more broken answers** Previously, sometimes the widget would show a half-finished answer, then the full answer would appear below it. Now, it always shows a single, complete, and correct answer.
+- **Reliable retries** The widget can now retry sending your message for longer during server updates without worrying about sending it twice.
+
+### Dashboard
+- **Always has an answer** The widget will try harder to respond instead of just showing nothing.
+
 ## 2026-07-18
 
 ### Widget
