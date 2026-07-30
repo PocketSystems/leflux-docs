@@ -6,6 +6,13 @@ description: What's new in LeFlux.
 Reverse chronological. Dates are the date the change landed in production.
 
 
+
+## 2026-07-30
+
+### Widget
+
+- **Read dates and times**: Each message now shows its timestamp, and conversations spanning multiple days include clear date dividers.
+
 ## 2026-07-29
 
 ### Widget
