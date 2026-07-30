@@ -18,9 +18,12 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Precise timestamps**: Every message bubble shows its own detailed timestamp.
 - **Seen on every message**: Know when your messages have been delivered and seen, no matter where they are in the conversation.
 - **Readability**: We've improved how message times are displayed, using a 12-hour clock for easier readability.
+- **Pre-chat forms** : Collect visitor contact details before a conversation starts.
+- **Improved pre-chat cards**: The pre-chat form will now always display correctly when configured.
 ### Dashboard
 
 - **Dark mode display**: Dark mode will now display correctly on all pages, even after visiting the landing page.
+
 
 
 
