@@ -16,6 +16,10 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Knows your visitors**: The widget can automatically learn visitor names, emails, and phone numbers from common website data sources, so they don't have to re-enter them.
 - **Immediate identity updates**: If a visitor logs in or updates their profile during a chat, the widget instantly recognizes these changes for a smoother experience.
 
+### Dashboard
+
+- **Dark mode display**: Dark mode will now display correctly on all pages, even after visiting the landing page.
+
 ## 2026-07-29
 
 ### Widget
