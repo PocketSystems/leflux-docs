@@ -17,9 +17,11 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Immediate identity updates**: If a visitor logs in or updates their profile during a chat, the widget instantly recognizes these changes for a smoother experience.
 - **Precise timestamps**: Every message bubble shows its own detailed timestamp.
 - **Seen on every message**: Know when your messages have been delivered and seen, no matter where they are in the conversation.
+- **Readability**: We've improved how message times are displayed, using a 12-hour clock for easier readability.
 ### Dashboard
 
 - **Dark mode display**: Dark mode will now display correctly on all pages, even after visiting the landing page.
+
 
 
 ## 2026-07-29
