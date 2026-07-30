@@ -12,6 +12,7 @@ Reverse chronological. Dates are the date the change landed in production.
 ### Widget
 
 - **Read dates and times**: Each message now shows its timestamp, and conversations spanning multiple days include clear date dividers.
+- **Message Delivery Status**: You can now see when your messages are sent, delivered, and seen.
 
 ## 2026-07-29
 
