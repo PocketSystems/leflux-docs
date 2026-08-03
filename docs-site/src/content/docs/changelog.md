@@ -7,6 +7,14 @@ Reverse chronological. Dates are the date the change landed in production.
 
 
 
+
+## 2026-08-04
+
+### Widget
+
+- **Buttons are live**: Buttons that show up in the conversation will now work as expected, leading visitors to the right pages.
+- **Always connected**: Your chat widget now always stays connected to the conversation, ensuring all messages are delivered promptly.
+
 ## 2026-07-30
 
 ### Widget
