@@ -28,6 +28,7 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Composer lock fix**: Typing in the chat always works now, even after clearing a conversation with a pre-chat form.
 - **Smooth scrolling**: The chat widget always shows you the newest message and choices without making you scroll.
 - **Skip optional fields**: You can now easily skip optional fields using a new button in the chat.
+- **Improved responsiveness**: Avoids long waiting times with no answer when the AI finishes a task without explicitly saying so.
 ### Server
 
 - **Smarter form filling**: The server now accurately processes all types of form fields, including dropdowns, checkboxes, and toggles, ensuring nothing is missed during form completion.
@@ -39,6 +40,7 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Faster first replies**: The widget now checks twice when the AI is taking too long to start replying. Your visitors get the first message much faster.
 - **Faster retries**: When the AI runs into a problem, the widget now recovers faster and continues the conversation.
 - **Improved form handling**: The chat widget now asks for all fields, including optional ones, and safely handles when you decline to answer a required field.
+
 
 ## 2026-07-30
 
