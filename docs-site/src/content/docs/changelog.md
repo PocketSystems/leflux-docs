@@ -23,6 +23,17 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Phone number validation**: We now verify phone numbers for accuracy to prevent incorrect numbers from being displayed to your customers.
 - **Improved Reliability**: LeFlux now reconnects more dependably, ensuring your messages are always delivered and replies are received, even after temporary internet interruptions.
 - **Date dividers**: We fixed a bug that prevented date dividers from appearing after you cleared a conversation.
+- **Smarter form filling**: The widget is now much better at understanding and filling out forms, handling various field types like dropdowns and checkboxes with greater accuracy.
+- **Faster task completion**: The widget now waits longer for the server to process information before showing a timeout, reducing instances where the chat ends prematurely.
+
+### Server
+
+- **Smarter form filling**: The server now accurately processes all types of form fields, including dropdowns, checkboxes, and toggles, ensuring nothing is missed during form completion.
+- **Faster task completion**: The server now prevents chat sessions from getting stuck when there are delays in receiving responses, leading to a smoother and more reliable experience.
+- **Improved form understanding**: The server is better at identifying and interacting with form fields, ensuring the chat agent can accurately collect information from your visitors.
+- **Accurate field identification**: The server can now reliably identify form fields even if the page changes, preventing errors and ensuring the agent interacts with the correct elements.
+- **Context-aware agent responses**: The server guides the chat agent to recognize existing forms on the page and to collect information from them directly, rather than asking visitors to navigate or re-enter data.
+- **Precise highlighting**: The server now accurately identifies which form field the agent is referring to, ensuring the pulsing highlight appears on the correct element.
 
 ## 2026-07-30
 
