@@ -15,6 +15,8 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Buttons are live**: Buttons that show up in the conversation will now work as expected, leading visitors to the right pages.
 - **Always connected**: Your chat widget now always stays connected to the conversation, ensuring all messages are delivered promptly.
 - **Improved error handling**: Widgets on unregistered domains now fail faster and more gracefully.
+- **Improved Accuracy**: The chat widget will no longer invent contact details like email addresses or phone numbers that your site doesn't publish.
+- **Accurate Contact Forms**: The chat widget will no longer refer to contact forms that don't exist on your website, preventing visitors from waiting for something that can't happen.
 
 ## 2026-07-30
 
