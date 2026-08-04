@@ -20,6 +20,7 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Better Answers**: Your AI will now prioritize answering the user's question directly before adding any pleasantries.
 - **Readability**: We've replaced all em-dashes with more standard punctuation to make messages easier to read.
 - **Improved Visitor Names**: We fixed how visitor names are recognized so you'll always see a person's actual name, not a phrase from their message.
+- **Phone number validation**: We now verify phone numbers for accuracy to prevent incorrect numbers from being displayed to your customers.
 
 ## 2026-07-30
 
