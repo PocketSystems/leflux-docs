@@ -34,6 +34,8 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Accurate field identification**: The server can now reliably identify form fields even if the page changes, preventing errors and ensuring the agent interacts with the correct elements.
 - **Context-aware agent responses**: The server guides the chat agent to recognize existing forms on the page and to collect information from them directly, rather than asking visitors to navigate or re-enter data.
 - **Precise highlighting**: The server now accurately identifies which form field the agent is referring to, ensuring the pulsing highlight appears on the correct element.
+- **Faster first replies**: The widget now checks twice when the AI is taking too long to start replying. Your visitors get the first message much faster.
+- **Faster retries**: When the AI runs into a problem, the widget now recovers faster and continues the conversation.
 
 ## 2026-07-30
 
