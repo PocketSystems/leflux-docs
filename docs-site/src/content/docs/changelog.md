@@ -25,7 +25,9 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Date dividers**: We fixed a bug that prevented date dividers from appearing after you cleared a conversation.
 - **Smarter form filling**: The widget is now much better at understanding and filling out forms, handling various field types like dropdowns and checkboxes with greater accuracy.
 - **Faster task completion**: The widget now waits longer for the server to process information before showing a timeout, reducing instances where the chat ends prematurely.
-
+- **Composer lock fix**: Typing in the chat always works now, even after clearing a conversation with a pre-chat form.
+- **Smooth scrolling**: The chat widget always shows you the newest message and choices without making you scroll.
+- **Skip optional fields**: You can now easily skip optional fields using a new button in the chat.
 ### Server
 
 - **Smarter form filling**: The server now accurately processes all types of form fields, including dropdowns, checkboxes, and toggles, ensuring nothing is missed during form completion.
@@ -36,6 +38,7 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Precise highlighting**: The server now accurately identifies which form field the agent is referring to, ensuring the pulsing highlight appears on the correct element.
 - **Faster first replies**: The widget now checks twice when the AI is taking too long to start replying. Your visitors get the first message much faster.
 - **Faster retries**: When the AI runs into a problem, the widget now recovers faster and continues the conversation.
+- **Improved form handling**: The chat widget now asks for all fields, including optional ones, and safely handles when you decline to answer a required field.
 
 ## 2026-07-30
 
