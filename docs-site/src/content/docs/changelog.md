@@ -22,6 +22,7 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Improved Visitor Names**: We fixed how visitor names are recognized so you'll always see a person's actual name, not a phrase from their message.
 - **Phone number validation**: We now verify phone numbers for accuracy to prevent incorrect numbers from being displayed to your customers.
 - **Improved Reliability**: LeFlux now reconnects more dependably, ensuring your messages are always delivered and replies are received, even after temporary internet interruptions.
+- **Date dividers**: We fixed a bug that prevented date dividers from appearing after you cleared a conversation.
 
 ## 2026-07-30
 
