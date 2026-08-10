@@ -34,6 +34,8 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Live Preview for Appearance Settings**: See changes to your widget's accent color and layout in real-time before saving them.
 - **Page-specific AI instructions**: Tell the AI what a specific page is about, right from that page.
 - **Launcher customization**: Easily change the look and feel of the chat launcher and nudge messages.
+- **Widget Editor**: You can now change how the widget looks and acts, directly on your site.
+- **Widget Preview**: See your changes instantly as you make them, without saving or reloading.
 ### Dashboard
 
 - **Adult Content Prevention**: We've added robust filtering to prevent our widget from appearing on adult-oriented sites, protecting our brand and your visitors.
@@ -51,6 +53,7 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Reliable Form Submission Feedback**: The AI can now accurately confirm when a form submission has been successful, preventing it from suggesting retries for completed actions.
 - **Improved Safety**: We've enhanced our content moderation to prevent misuse, ensuring a safer experience for everyone.
 - **Improved content filtering**: Our systems are now much better at blocking inappropriate content while allowing legitimate websites to operate without interference.
+
 
 
 
