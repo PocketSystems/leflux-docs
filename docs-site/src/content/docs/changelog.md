@@ -18,6 +18,8 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Multiple Tabs**: Your visitors can now open your site in multiple tabs without losing the chat history in either one.
 - **Improved reliability**: The widget can now recover and show AI responses even if there's a temporary connection issue.
 - **Smarter article linking**: The widget now intelligently links to relevant articles mentioned in its responses, even when the original question didn't explicitly use the article's title.
+- **Smarter Links**: Links to your pages now appear directly in chat answers when we mention them.
+- **Better Buttons**: We improved how buttons work when they link to your pages.
 ### Dashboard
 
 - **Adult Content Prevention**: We've added robust filtering to prevent our widget from appearing on adult-oriented sites, protecting our brand and your visitors.
@@ -30,6 +32,7 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Reliable Form Submission Feedback**: The AI can now accurately confirm when a form submission has been successful, preventing it from suggesting retries for completed actions.
 - **Improved Safety**: We've enhanced our content moderation to prevent misuse, ensuring a safer experience for everyone.
 - **Improved content filtering**: Our systems are now much better at blocking inappropriate content while allowing legitimate websites to operate without interference.
+
 
 
 ## 2026-08-04
