@@ -47,6 +47,8 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Polished design**: The entire dashboard has a refreshed and consistent look, with improved controls and readability.
 - **Save feedback**: The save button now clearly shows its state, preventing layout shifts after you make changes.
 - **Visual consistency**: Your settings for the widget’s appearance now match the look and feel of the Dashboard, making it easier to set up and recognize.
+- **Improved Corner Selection**: Easily choose the widget's corner position with a visual dot on a screen preview.
+- **Enhanced Offset Controls**: Adjust widget offsets precisely using a new stepper with plus and minus buttons, and scroll wheel support.
 ### Server
 
 - **Smarter List Handling**: When the AI promises to provide a list of items, it will now only do so if it can actually provide one, preventing empty responses.
@@ -55,6 +57,7 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Reliable Form Submission Feedback**: The AI can now accurately confirm when a form submission has been successful, preventing it from suggesting retries for completed actions.
 - **Improved Safety**: We've enhanced our content moderation to prevent misuse, ensuring a safer experience for everyone.
 - **Improved content filtering**: Our systems are now much better at blocking inappropriate content while allowing legitimate websites to operate without interference.
+
 
 
 
