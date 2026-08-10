@@ -16,6 +16,7 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Improved Callout Placement**: Callouts for asking questions about fields now avoid covering important elements on your site.
 - **Better Callout Visibility**: Callouts will no longer hide behind the chat widget itself.
 - **Multiple Tabs**: Your visitors can now open your site in multiple tabs without losing the chat history in either one.
+- **Improved reliability**: The widget can now recover and show AI responses even if there's a temporary connection issue.
 ### Dashboard
 
 - **Adult Content Prevention**: We've added robust filtering to prevent our widget from appearing on adult-oriented sites, protecting our brand and your visitors.
@@ -26,6 +27,7 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Accurate Contact Information**: The AI will now correctly identify and use contact details provided by your visitors, even when the site content is structured differently.
 - **Improved Roman Urdu Comprehension**: The AI will no longer misinterpret the Roman Urdu word 'na' as a refusal, leading to more accurate interactions.
 - **Reliable Form Submission Feedback**: The AI can now accurately confirm when a form submission has been successful, preventing it from suggesting retries for completed actions.
+
 
 
 ## 2026-08-04
