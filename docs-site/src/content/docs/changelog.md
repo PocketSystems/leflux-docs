@@ -28,6 +28,7 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Improved Roman Urdu Comprehension**: The AI will no longer misinterpret the Roman Urdu word 'na' as a refusal, leading to more accurate interactions.
 - **Reliable Form Submission Feedback**: The AI can now accurately confirm when a form submission has been successful, preventing it from suggesting retries for completed actions.
 - **Improved Safety**: We've enhanced our content moderation to prevent misuse, ensuring a safer experience for everyone.
+- **Improved content filtering**: Our systems are now much better at blocking inappropriate content while allowing legitimate websites to operate without interference.
 
 ## 2026-08-04
 
