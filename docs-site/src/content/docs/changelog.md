@@ -24,6 +24,7 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Improved internal linking**: The widget can now find and link to more relevant pages on your site, making navigation smoother for your users.
 - **Improved link behavior**: Named items in chat responses, such as articles or products, are now consistently linked, making it easier for customers to access relevant content.
 - **Owner controls**: you can now log in as the owner from the widget itself to manage your site.
+- **Owner controls are now easier to find**: We have moved all owner controls from the chat header to a dedicated badge on the side of the page, so you can access them even when the chat is closed.
 ### Dashboard
 
 - **Adult Content Prevention**: We've added robust filtering to prevent our widget from appearing on adult-oriented sites, protecting our brand and your visitors.
@@ -36,6 +37,7 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Reliable Form Submission Feedback**: The AI can now accurately confirm when a form submission has been successful, preventing it from suggesting retries for completed actions.
 - **Improved Safety**: We've enhanced our content moderation to prevent misuse, ensuring a safer experience for everyone.
 - **Improved content filtering**: Our systems are now much better at blocking inappropriate content while allowing legitimate websites to operate without interference.
+
 
 
 
