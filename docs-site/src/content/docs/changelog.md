@@ -37,6 +37,7 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Adult Content Prevention**: We've added robust filtering to prevent our widget from appearing on adult-oriented sites, protecting our brand and your visitors.
 - **Playground Activity**: You can now view detailed activity and moderation insights for the public playground within your dashboard.
 - **Open Site button improved**: We fixed a bug that prevented the 'Open Site' button from always showing your owner panel.
+- **Access restored**: You can once again generate new secure tokens for your widget.
 ### Server
 
 - **Smarter List Handling**: When the AI promises to provide a list of items, it will now only do so if it can actually provide one, preventing empty responses.
@@ -45,6 +46,7 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Reliable Form Submission Feedback**: The AI can now accurately confirm when a form submission has been successful, preventing it from suggesting retries for completed actions.
 - **Improved Safety**: We've enhanced our content moderation to prevent misuse, ensuring a safer experience for everyone.
 - **Improved content filtering**: Our systems are now much better at blocking inappropriate content while allowing legitimate websites to operate without interference.
+
 
 
 
