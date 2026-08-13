@@ -19,6 +19,7 @@ Reverse chronological. Dates are the date the change landed in production.
 ### Widget
 
 - **Smarter Links**: Your chat widget is now better at linking to relevant pages on your site, avoiding unrelated suggestions.
+- **Improved Form Handling**: The chat widget is now smarter when you ask to skip optional fields in a form, ensuring it doesn't accidentally skip required fields or end the conversation prematurely.
 
 ## 2026-08-10
 
