@@ -24,6 +24,7 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Smarter field skipping**: You can now tell the AI to skip a field in your form even if you haven't answered it yet.
 - **Smarter form handling**: You can now ask questions in the middle of filling out a form without getting stuck.
 - **Improved Navigation Handling**: The AI now accurately tracks page movements, preventing it from incorrectly stating that it has navigated you to a new page when it hasn't.
+- **Smarter Navigation**: The chat widget now recognizes when it has already tried to move you to another page and will stop suggesting the same action repeatedly.
 
 ## 2026-08-10
 
