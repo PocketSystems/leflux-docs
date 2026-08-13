@@ -16,6 +16,10 @@ Reverse chronological. Dates are the date the change landed in production.
 
 - **Live Demo Stability**: We fixed an issue that sometimes prevented new visitors from trying our live demo, even when slots were available. Now, it's more reliably open for you.
 
+### Widget
+
+- **Smarter Links**: Your chat widget is now better at linking to relevant pages on your site, avoiding unrelated suggestions.
+
 ## 2026-08-10
 
 ### Widget
