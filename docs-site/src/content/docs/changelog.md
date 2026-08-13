@@ -9,6 +9,13 @@ Reverse chronological. Dates are the date the change landed in production.
 
 
 
+
+## 2026-08-13
+
+### Landing
+
+- **Live Demo Stability**: We fixed an issue that sometimes prevented new visitors from trying our live demo, even when slots were available. Now, it's more reliably open for you.
+
 ## 2026-08-10
 
 ### Widget
