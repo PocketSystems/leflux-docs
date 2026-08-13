@@ -22,6 +22,7 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Improved Form Handling**: The chat widget is now smarter when you ask to skip optional fields in a form, ensuring it doesn't accidentally skip required fields or end the conversation prematurely.
 - **Form Flexibility**: Now you can skip optional form fields as described on the page, making it easier to fill out forms in the chat.
 - **Smarter field skipping**: You can now tell the AI to skip a field in your form even if you haven't answered it yet.
+- **Smarter form handling**: You can now ask questions in the middle of filling out a form without getting stuck.
 
 ## 2026-08-10
 
