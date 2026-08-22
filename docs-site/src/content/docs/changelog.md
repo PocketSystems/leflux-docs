@@ -10,6 +10,13 @@ Reverse chronological. Dates are the date the change landed in production.
 
 
 
+
+## 2026-08-23
+
+### Widget
+
+- **Single Button Display**: The chat widget now avoids showing duplicate buttons for the same link.
+
 ## 2026-08-13
 
 ### Landing
