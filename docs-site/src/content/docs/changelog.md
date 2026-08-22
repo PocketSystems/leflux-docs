@@ -16,6 +16,7 @@ Reverse chronological. Dates are the date the change landed in production.
 ### Widget
 
 - **Single Button Display**: The chat widget now avoids showing duplicate buttons for the same link.
+- **Button Labels**: The chat widget now correctly displays button labels, preventing duplicate text from appearing on interactive elements.
 
 ## 2026-08-13
 
