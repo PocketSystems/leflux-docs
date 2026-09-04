@@ -32,6 +32,7 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Fulfills promises for actions**: If the widget promises an action or provides options, it will now ensure that these are actually delivered and visible to the user.
 - **Executes searches reliably**: If your site's search functionality doesn't respond as expected, the widget will now follow browser-standard methods to ensure the search is successfully completed.
 - **Accurately reports all actions**: The widget now correctly reports on all actions it attempts to perform, including those that might have previously gone unrecorded, like `wait` or `double_click`.
+- **Smarter answers**: The widget now gives better answers, especially about things like delivery or pricing, by checking more of your site for information.
 
 ## 2026-08-23
 
