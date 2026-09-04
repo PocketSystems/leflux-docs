@@ -11,6 +11,28 @@ Reverse chronological. Dates are the date the change landed in production.
 
 
 
+
+## 2026-09-04
+
+### Widget
+
+- **Always sees what's on screen**: The widget now accurately sees what's visible on your page, even after a scroll or navigation, so it can give more relevant answers.
+- **Answers based on your site's words**: The widget can now use your site's specific phrasing to answer questions, even when the exact words aren't in its training data.
+- **Better navigation to relevant pages**: The widget now prioritizes important, shallow links in your site's navigation, making it easier for users to get to key pages like their shopping basket.
+- **Avoids repeating itself**: The widget is smarter about detecting and preventing nearly identical answers from being shown repeatedly.
+- **Understands product actions**: When users ask to add an item to a cart or perform similar actions, the widget now correctly interprets these requests and performs the intended click.
+- **Accurately reports product availability**: The widget now correctly identifies and reports when a product size or option is unavailable.
+- **Detects hidden size and color pickers**: The widget can now find and interact with size and color pickers on product pages, even when they're not explicitly marked with standard HTML attributes.
+- **Quotes real numbers and specifics**: The widget now has access to the full visible text of your page, allowing it to quote prices, plan details, and other specifics accurately.
+- **Reacts to site refusals**: If your site indicates that an action failed (e.g., "Please Select Size..."), the widget will now recognize this and rephrase its answer accordingly, rather than falsely claiming success.
+- **Stops telling users to click nothing**: The widget will no longer tell users to click or tap on options that aren't actually present on the page.
+- **Stays on the correct tab**: When clicking links that open new tabs, the widget now ensures the user stays on the original page by opening the link in the current tab.
+- **Offers better retry attempts**: If an answer needs to be retried, the widget will now evaluate both the old and new attempts to ensure the retry is genuinely better.
+- **Handles command requests correctly**: When asked to open an item or show results, the widget now performs the requested action or provides tappable options, instead of just describing them in text.
+- **Fulfills promises for actions**: If the widget promises an action or provides options, it will now ensure that these are actually delivered and visible to the user.
+- **Executes searches reliably**: If your site's search functionality doesn't respond as expected, the widget will now follow browser-standard methods to ensure the search is successfully completed.
+- **Accurately reports all actions**: The widget now correctly reports on all actions it attempts to perform, including those that might have previously gone unrecorded, like `wait` or `double_click`.
+
 ## 2026-08-23
 
 ### Widget
