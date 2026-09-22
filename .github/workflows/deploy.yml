@@ -33,19 +33,17 @@ jobs:
           mkdir -p ~/.ssh
           ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
-      - name: Setup Node 20
+      - name: Setup Node 22
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Install + build docs
         run: |
           cd docs-site
           npm ci
-          # @astrojs/sitemap 3.x throws at the very end of the build with a
-          # custom `base` path, but dist/ is fully written before the throw.
-          # Tolerate the non-zero exit and verify the output instead.
-          npm run build || echo "build exited non-zero, verifying dist/ below"
+          npm audit --audit-level=high
+          npm run build
           test -f dist/index.html || { echo "dist/index.html missing, build broken"; exit 1; }
           test -d dist/_astro     || { echo "dist/_astro missing, build broken"; exit 1; }
           ls -la dist/ | head -20

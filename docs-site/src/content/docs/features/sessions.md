@@ -1,81 +1,53 @@
 ---
 title: Session persistence
-description: How conversations survive page reloads and tab switches.
+description: How conversations recover across reloads, reconnects, and server restarts.
 ---
 
-A "session" in LeFlux is a single ongoing visitor conversation. It survives:
-
-- Page reloads
-- Cross-page navigations (SPA + hard reloads)
-- Browser tab close + reopen (within 24h)
-- Network blips (auto-reconnect)
+A session is one visitor conversation in one browser. The widget combines local browser history, a live server session, and persisted conversation data when Firebase is configured.
 
 ## Storage
 
-| Where        | What                                                              | TTL                       |
-|--------------|-------------------------------------------------------------------|---------------------------|
-| `localStorage` | Session id, full message history, widget state (open/docked)    | 24h (default)             |
-| `localStorage` | User data (name, email, phone) from form-fills                  | 30 days                   |
-| Server       | Session state + history + crawled context                         | 30 min idle eviction      |
-| Server (persisted) | Persisted message log (for dashboard analytics)              | Forever (until you delete) |
+| Storage | Contents | Lifetime |
+|---------|----------|----------|
+| `localStorage` | Session id (`ai_chat_widget_session`) | Until cleared or replaced |
+| `localStorage` | Chat history (`ai_chat_widget_history`) | 24 hours from the last save |
+| `localStorage` | Widget open/layout state | Until cleared or replaced |
+| `localStorage` | Remembered visitor details | 30 days |
+| Server memory | Active conversation and task state | 30 minutes idle; at most 1,000 sessions |
+| Firestore, when configured | Conversation messages and saved task state | Separate from the browser history lifetime |
+
+The local history expiry does not delete persisted server messages.
 
 ## Restore flow
 
-When the widget mounts on a page:
+1. The widget reads its saved session id and calls `GET /api/session/:id`.
+2. The server checks the requesting site's identity. On a memory miss, it attempts to restore the site's saved session from Firestore.
+3. Restore accepts saved state updated within the past 24 hours and respects the server's session capacity. Concurrent recovery requests share the same restore operation.
+4. The widget reconnects with Socket.IO and emits `join_session` with the session id **as a string**. A successful join returns `{ sessionId, history }`.
+5. If restoration is unavailable, the widget initializes a new session and supplies its recent local conversation history. The server accepts only bounded user/assistant text, never client-supplied system or tool roles.
 
-1. Read `leflux:sessionId` from localStorage.
-2. If found AND under 24h old, call `POST /api/session/<id>` to verify the server still has it.
-3. Server responds with restored history + active task state.
-4. Widget hydrates the chat-window with the prior messages.
-5. If the previous session is gone (server-evicted past 30min idle), widget starts a fresh session — but visitor sees the locally-cached messages so the UI doesn't go blank.
+Firestore recovery requires previously persisted state. A visitor who opened the widget without starting a conversation may have no saved server session.
 
-## Cross-tab behavior
+## Multiple tabs
 
-Multiple tabs of the same origin share the same localStorage. Two tabs of your site = same session id = same conversation.
+Tabs on the same origin share localStorage, but LeFlux does not promise live `BroadcastChannel` synchronization of every bubble or layout change.
 
-A `BroadcastChannel` syncs state across tabs:
+Only one visitor socket owns a session room at a time. A newer join removes the previous socket and sends it `session_taken_over`. The older widget records the takeover and rejoins before its next message. Events from an evicted socket cannot change the session, and its later disconnect cannot mark the replacement socket offline.
 
-- Visitor types in tab A → message appears in tab B too.
-- Tab B opens chat → tab A's open state mirrors.
-- Chat closes in either → all tabs close.
+## Reconnect and missed messages
 
-If two tabs send a message simultaneously, the server enforces one-socket-per-session (newer socket wins). The older tab gets a brief "another tab took over" indicator and goes read-only for a few seconds.
+Socket.IO reconnects after a transport interruption. LeFlux also sends application `heartbeat` and `visibility` events to update visitor presence.
 
-## Manual reset
+Socket delivery is not a durable replay log. The widget uses `GET /api/session/:id/messages?since=<timestamp>` to recover persisted messages after gaps. Recovery depends on server persistence; it does not replay arbitrary page actions.
 
-Visitors can clear the session by:
+## Clearing and privacy
 
-- **Long-pressing the chat header** → "Clear conversation" appears.
-- Or via `localStorage.clear()` from DevTools.
+Clearing chat history in the widget affects the local transcript. The public `DELETE /api/session/:id` endpoint removes the active in-memory session; it is not a complete erasure API for persisted conversation records.
 
-After clear, the next message starts a fresh session with a new id.
+For data-erasure requests, account for both browser storage and the site's persisted records. Do not assume that the 24-hour local history expiry or 30-minute idle eviction is a server data-retention policy.
 
-## Privacy controls
+## Cross-device and interrupted tasks
 
-You control session retention via the dashboard:
+There is no automatic cross-device conversation sync. A phone and a laptop have separate browser storage.
 
-- **Settings → Privacy → Session retention** — default 24h on client + 30min idle on server. Reduce for high-privacy contexts.
-- **Settings → Privacy → Message log** — toggle whether messages persist on our servers for dashboard review. Default ON for analytics.
-
-Visitors can request deletion via your site's privacy mechanism; LeFlux exposes a `DELETE /api/session/:id` for one-off purges.
-
-## Anonymous by default
-
-Sessions are NOT tied to a visitor identity. A `leflux:visitorId` cookie is generated per browser for analytics aggregation but isn't tied to any PII. If your privacy policy requires zero anonymous tracking, set `data-no-visitor-id` on the embed snippet.
-
-## Liveness
-
-Transport-level ping/pong (about every 25s) keeps the connection warm and lets the server detect dropped sockets quickly. After 30 minutes of session inactivity (no new visitor messages OR action results) the server-side session evicts; localStorage history on the client still survives the 24h TTL and a fresh session_init reuses it.
-
-## Cross-device
-
-There's no cross-device session sync — sessions are per-browser. Visitor on phone + laptop = two separate sessions. (Coming later if there's demand.)
-
-## What happens on reload mid-task
-
-If the visitor reloads while an action sequence is mid-execution:
-
-- Server holds the task state for 30s post-disconnect.
-- Widget re-mounts on the new page, restores localStorage state, reconnects WS.
-- Server resumes the task from where it left off if the new page's URL matches the expected next-step URL.
-- Otherwise the task aborts cleanly with a "we got interrupted by a reload — what next?" message.
+Saved task state can be restored with the conversation. The widget also uses a short-lived navigation marker to continue a task after an agent-initiated page navigation. Recovery depends on the saved state and the current page; it is not a guarantee that every interrupted action will run again.

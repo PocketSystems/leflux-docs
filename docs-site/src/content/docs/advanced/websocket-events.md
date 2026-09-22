@@ -7,21 +7,24 @@ LeFlux uses a single long-lived WebSocket connection. Mostly an implementation d
 
 ## Connection
 
-URL: `wss://leflux.ai`.
+Use the Socket.IO client with `https://leflux.ai`; this is not a raw WebSocket protocol. The widget uses polling transport for compatibility with host-site CSP policies.
 
-Auth: same model as the REST endpoints — the browser's `Origin` header on the upgrade handshake is matched against the allowed-host list. Visitor session id is passed as a query param OR via the first `join_session` event:
-
+```js
+const socket = io('https://leflux.ai', { transports: ['polling'] });
+socket.on('connect', () => socket.emit('join_session', sessionId));
 ```
-wss://leflux.ai?sessionId=<uuid>
-```
 
-One socket per session. Server kicks older sockets if a newer one joins the same session room.
+`join_session` takes a UUID string, not an object or a URL query parameter. Before joining, the server resolves the browser Origin through site authentication and checks that the session belongs to that site. Owner previews may supply their preview token through Socket.IO `auth.previewToken`.
+
+Keep session ids private. Origin identifies the hosting site in a browser; it is not a user login credential and can be supplied by non-browser clients.
+
+After a successful join, visitor events must target that session and the socket must still own its room. A newer join emits `session_taken_over` to the older socket and revokes its room membership.
 
 ## Events — client → server
 
 | Event                    | Payload                                                                       |
 |--------------------------|-------------------------------------------------------------------------------|
-| `join_session`           | `{ sessionId: string }`                                                       |
+| `join_session`           | `sessionId: string`                                                       |
 | `action_complete`        | `{ sessionId, actionId, result: { success, elementId?, description, error? } }` |
 | `sequence_complete`      | `{ sessionId, result: { success, results: StepResult[] } }`                   |
 | `update_context`         | `{ sessionId, context: { url, title, indexedElements, visibleText, ... } }`   |
@@ -32,7 +35,7 @@ One socket per session. Server kicks older sockets if a newer one joins the same
 
 | Event             | Payload                                                                              |
 |-------------------|--------------------------------------------------------------------------------------|
-| `session_joined`  | `{ sessionId, restored: boolean, history: Message[] }`                               |
+| `session_joined`  | `{ sessionId, history: Message[] }`                               |
 | `message_chunk`   | `{ delta: string, streamId: string, chunkIndex: number }` — streamed text deltas    |
 | `message_done`    | `{ text: string, streamId: string }` — locks in the streaming bubble                |
 | `message`         | `{ text: string, isQuestion?: boolean, isError?: boolean }` — non-streamed message  |
@@ -69,11 +72,12 @@ Sequence (multi-step):
 }
 ```
 
-## Liveness + reconnect
+## Liveness and reconnect
 
-Transport-level ping/pong (roughly every 25s) keeps the connection warm and detects dropped connections. If the WebSocket disconnects, the connection auto-reconnects within a few seconds and the server-side session resumes seamlessly.
+In addition to transport ping/pong, the widget sends `heartbeat` (`{ sessionId, tabVisible }`) and `visibility` (`{ sessionId, visible }`). These events require current session-room ownership.
 
-## Backpressure
+Reconnect joins the session again. Persisted messages can be recovered through the HTTP messages endpoint; there is no guarantee of replay for arbitrary socket events. See [Session persistence](/docs/features/sessions/).
 
-Server enforces a max 30 action_plans per task to prevent runaway loops. The widget enforces a max 5 client-side iteration round-trips per visitor message as defense-in-depth.
+## Loop limits
 
+The default server iteration cap is 20, increasing to 30 for navigation-heavy tasks. `MAX_TASK_ITERATIONS` can override it. Progress and repeated-action guards may stop a task earlier.
