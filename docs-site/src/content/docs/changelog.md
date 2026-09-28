@@ -12,6 +12,18 @@ Reverse chronological. Dates are the date the change landed in production.
 
 
 
+
+## 2026-09-28
+
+### Widget
+
+- **Smarter answers**: LeFlux now understands your knowledge base even better.
+- **Seamless human handoff**: Improved reliability when transferring chats to a human agent.
+
+### Onboarding
+
+- **Clearer first steps**: We've made the LeFlux onboarding process even easier to understand.
+
 ## 2026-09-04
 
 ### Widget
