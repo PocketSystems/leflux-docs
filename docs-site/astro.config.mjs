@@ -69,9 +69,16 @@ export default defineConfig({
         // uses `starlight-theme` (light/dark/auto). Same origin (leflux.ai) ⇒
         // shared localStorage, so on load we map the app's choice into
         // Starlight's key + data-theme (default LIGHT to match the app), and a
-        // MutationObserver mirrors the docs' own toggle back into `leflux-theme`.
+        // pick in the docs' own theme menu is mirrored back into `leflux-theme`.
         // A storage listener keeps a second open tab live. Runs before the
         // widget script so the theme is settled early.
+        //
+        // Only a real pick is mirrored, never a page load. The landing stays
+        // dark until the visitor chooses a theme, and it reads "chose" as
+        // `leflux-theme` being set. Starlight's menu re-applies its stored theme
+        // on every load, so the MutationObserver on data-theme that used to sit
+        // here wrote `leflux-theme` for every docs visitor: someone who opened
+        // the docs once came back to a light landing they never asked for.
         {
           tag: 'script',
           content: [
@@ -87,10 +94,11 @@ export default defineConfig({
             'if(window.StarlightThemeProvider&&StarlightThemeProvider.updatePickers)StarlightThemeProvider.updatePickers(toSL(app));',
             '}catch(e){}}',
             'applyFromApp();',
-            'try{new MutationObserver(function(){try{',
-            "var app=fromSL(localStorage.getItem(SL)||'auto');",
-            'if(localStorage.getItem(APP)!==app)localStorage.setItem(APP,app);',
-            "}catch(e){}}).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});}catch(e){}",
+            "document.addEventListener('change',function(e){try{",
+            'var t=e.target;',
+            "if(!t||!t.closest||!t.closest('starlight-theme-select'))return;",
+            "localStorage.setItem(APP,fromSL(t.value==='dark'||t.value==='light'?t.value:'auto'));",
+            '}catch(err){}});',
             "window.addEventListener('storage',function(e){if(e.key===APP&&e.newValue)applyFromApp();});",
             '})();',
           ].join(''),
