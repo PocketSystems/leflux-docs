@@ -2,7 +2,7 @@ name: Deploy docs
 
 # Builds the Astro Starlight docs and ships the static output to the same
 # server path the docs have always lived at (/var/www/leflux/docs-site),
-# so the public URL stays https://leflux.xrlabs.app/docs .
+# Both leflux.ai and dev.leflux.ai serve this same static directory at /docs/.
 #
 # Needs three repo secrets:
 #   SSH_PRIVATE_KEY  deploy key authorised on the box
@@ -61,17 +61,19 @@ jobs:
 
       - name: Verify docs are live
         run: |
-          OK=0
-          for i in 1 2 3 4 5 6; do
-            if curl -fsSL -m 8 https://leflux.xrlabs.app/docs/ | grep -qi 'leflux'; then
-              echo "✅ docs live on attempt $i"; OK=1; break
-            fi
-            echo "… attempt $i: not ready, retrying in 5s"; sleep 5
+          for host in leflux.ai dev.leflux.ai; do
+            OK=0
+            for i in 1 2 3 4 5 6; do
+              if curl -fsSL -m 8 "https://$host/docs/" | grep -q 'logo-clean'; then
+                echo "✅ $host docs logo live on attempt $i"; OK=1; break
+              fi
+              echo "… $host attempt $i: not ready, retrying in 5s"; sleep 5
+            done
+            [ "$OK" = "1" ] || exit 1
           done
-          [ "$OK" = "1" ] || echo "⚠️ could not confirm (possibly CDN/cache); check manually"
 
       - name: Summary
         if: success()
         run: |
           echo "🎉 Docs deployed"
-          echo "📖 https://leflux.xrlabs.app/docs"
+          echo "📖 https://leflux.ai/docs/ and https://dev.leflux.ai/docs/"

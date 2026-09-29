@@ -17,10 +17,10 @@ export default defineConfig({
       title: 'LeFlux',
       description: 'Your visitors ask, LeFlux does. Developer docs for the LeFlux AI agent that answers visitors, opens the right page, fills forms, and books meetings. Install, configure, and extend in one line of code.',
       logo: {
-        src: './src/assets/logo.svg',
+        src: './src/assets/logo-clean.png',
         replacesTitle: false,
       },
-      favicon: '/favicon.svg',
+      favicon: '/favicon.png',
       customCss: ['./src/styles/custom.css'],
       // The docs themselves are open-source (PocketSystems/leflux-docs is a
       // public repo). The product stays closed-source, but the docs content
