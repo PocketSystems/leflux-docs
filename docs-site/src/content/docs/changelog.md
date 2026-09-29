@@ -13,6 +13,13 @@ Reverse chronological. Dates are the date the change landed in production.
 
 
 
+
+## 2026-09-29
+
+### Widget
+
+- **Better Search Visibility**: Your LeFlux widget content can now be found by search engines, helping more users discover your site.
+
 ## 2026-09-28
 
 ### Widget
