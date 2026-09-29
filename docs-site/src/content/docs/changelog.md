@@ -22,6 +22,7 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Redesigned landing page**: The LeFlux landing page has a brand new look and feel, showcasing the widget in action on a realistic demo website.
 - **Comprehensive content**: All the valuable information from the previous landing page, including detailed explanations, pricing, and installation guides, has been brought back and improved.
 - **Privacy by design**: Personal information, like email addresses from chat chips, is never sent to analytics to ensure visitor privacy.
+- **Demo Dark Mode**: The demo website now seamlessly switches to dark mode to match your site, ensuring a consistent visual experience.
 
 ## 2026-09-29
 
