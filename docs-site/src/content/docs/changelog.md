@@ -14,6 +14,15 @@ Reverse chronological. Dates are the date the change landed in production.
 
 
 
+
+## 2026-09-30
+
+### Landing
+
+- **Redesigned landing page**: The LeFlux landing page has a brand new look and feel, showcasing the widget in action on a realistic demo website.
+- **Comprehensive content**: All the valuable information from the previous landing page, including detailed explanations, pricing, and installation guides, has been brought back and improved.
+- **Privacy by design**: Personal information, like email addresses from chat chips, is never sent to analytics to ensure visitor privacy.
+
 ## 2026-09-29
 
 ### Widget
