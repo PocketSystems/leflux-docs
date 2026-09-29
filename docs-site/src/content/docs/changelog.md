@@ -24,6 +24,10 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Privacy by design**: Personal information, like email addresses from chat chips, is never sent to analytics to ensure visitor privacy.
 - **Demo Dark Mode**: The demo website now seamlessly switches to dark mode to match your site, ensuring a consistent visual experience.
 
+### Widget
+
+- **Improved Reliability**: LeFlux now better handles temporary connection drops, ensuring your customers' chat experiences are seamless and uninterrupted.
+
 ## 2026-09-29
 
 ### Widget
