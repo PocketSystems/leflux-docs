@@ -27,6 +27,7 @@ Reverse chronological. Dates are the date the change landed in production.
 ### Widget
 
 - **Improved Reliability**: LeFlux now better handles temporary connection drops, ensuring your customers' chat experiences are seamless and uninterrupted.
+- **Fix**: The widget now correctly displays product option labels.
 
 ## 2026-09-29
 
