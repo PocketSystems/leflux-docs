@@ -24,6 +24,7 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Privacy by design**: Personal information, like email addresses from chat chips, is never sent to analytics to ensure visitor privacy.
 - **Demo Dark Mode**: The demo website now seamlessly switches to dark mode to match your site, ensuring a consistent visual experience.
 - **Light theme by default**: The landing page now defaults to a light theme, matching the rest of the product.
+- **Faster load time**: The LeFlux landing page loads faster and more smoothly for all visitors, including those with slower connections.
 ### Widget
 
 - **Improved Reliability**: LeFlux now better handles temporary connection drops, ensuring your customers' chat experiences are seamless and uninterrupted.
@@ -50,10 +51,11 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Unified app frame**: The dashboard now has a consistent sidebar, command palette, and smooth page transitions.
 - **Shared building blocks**: The elements that make up each page now look and behave consistently across the dashboard.
 - **New visual style**: The app now uses the new Ember design system, with updated colors, typography, and UI components.
-
+- **Improved 404 page**: Pages that don't exist now show a consistent and polished error message, matching the rest of the LeFlux dashboard.
 ### Onboarding
 
 - **Redesigned setup flow**: The entire setup process, from adding your first URL to completing checkout, has a new look and improved steps.
+
 
 ## 2026-09-29
 
