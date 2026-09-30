@@ -42,6 +42,18 @@ Reverse chronological. Dates are the date the change landed in production.
 ### Dashboard
 
 - **Dark mode display fix**: Dark mode now correctly displays all elements, ensuring readability across the dashboard.
+- **Refreshed waiting visitor count**: The number of visitors waiting for support is now always accurate, matching what support sees.
+- **Redesigned scan screens**: The full-screen scan and the live scan card have a new look, showing progress and details more clearly.
+- **Redesigned site settings and widget preview**: Site settings are now organized into tabs, with a live preview of your widget's appearance on your actual site.
+- **Redesigned site overview, AI, knowledge, and sessions**: These pages have a fresh, modern look, with improved layouts and clearer information.
+- **Redesigned workspace pages and billing**: Your sites, activity, analytics, account, and billing pages have been updated for a better experience.
+- **Unified app frame**: The dashboard now has a consistent sidebar, command palette, and smooth page transitions.
+- **Shared building blocks**: The elements that make up each page now look and behave consistently across the dashboard.
+- **New visual style**: The app now uses the new Ember design system, with updated colors, typography, and UI components.
+
+### Onboarding
+
+- **Redesigned setup flow**: The entire setup process, from adding your first URL to completing checkout, has a new look and improved steps.
 
 ## 2026-09-29
 
