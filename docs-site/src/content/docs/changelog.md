@@ -23,11 +23,25 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Comprehensive content**: All the valuable information from the previous landing page, including detailed explanations, pricing, and installation guides, has been brought back and improved.
 - **Privacy by design**: Personal information, like email addresses from chat chips, is never sent to analytics to ensure visitor privacy.
 - **Demo Dark Mode**: The demo website now seamlessly switches to dark mode to match your site, ensuring a consistent visual experience.
-
+- **Light theme by default**: The landing page now defaults to a light theme, matching the rest of the product.
 ### Widget
 
 - **Improved Reliability**: LeFlux now better handles temporary connection drops, ensuring your customers' chat experiences are seamless and uninterrupted.
 - **Fix**: The widget now correctly displays product option labels.
+- **Always sees the newest message**: The newest messages and options will always be visible, even if they arrive fast.
+- **Clearing the chat always works**: When you clear a conversation, the widget now fully resets and is ready to start a new one.
+- **Optional fields can be skipped**: The widget now shows a 'Skip' button for optional form fields, making it clearer what can be left blank.
+- **Reliable form field detection**: The widget correctly identifies and asks for information in dropdowns, checkboxes, and toggles, ensuring no fields are missed.
+- **Clearer pre-chat form**: If you use a pre-chat form, it now reliably shows up and works as expected for new visitors.
+- **Visitor info learned automatically**: The widget can now automatically learn visitor names, emails, and phone numbers from your website, saving them from re-typing.
+- **Message delivery status**: Visitors now see 'Sending', 'Delivered', and 'Seen' statuses on their messages, so they know their message got through.
+- **Timestamps on every message**: All messages now show a timestamp, and date dividers appear for conversations spanning multiple days.
+- **CTA buttons always work**: Call-to-action buttons in the chat transcript now reliably navigate to the correct pages, even in multi-turn conversations.
+- **24-hour clock on message times**: Message timestamps now use a 24-hour format (e.g., 13:22) for consistency.
+
+### Dashboard
+
+- **Dark mode display fix**: Dark mode now correctly displays all elements, ensuring readability across the dashboard.
 
 ## 2026-09-29
 
