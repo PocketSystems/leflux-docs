@@ -4,7 +4,7 @@
 // the slug is matched against the LOGOS map below.
 const PAGE_TITLE_ID = '_top';
 
-const entry = Astro.props.entry;
+const entry = Astro.locals.starlightRoute.entry;
 const title = entry?.data?.title ?? '';
 const slug = entry?.slug ?? entry?.id ?? '';
 

@@ -5,19 +5,26 @@ description: Real-time event protocol between widget and server.
 
 Detailed at [WebSocket events](/docs/advanced/websocket-events/). This page is the quick reference.
 
-## URL
+## Connection
 
-```
-wss://leflux.ai/?sessionId=<uuid>
+Use the Socket.IO client with `https://leflux.ai`; this is not a raw WebSocket protocol. The widget uses polling transport for compatibility with host-site CSP policies.
+
+```js
+const socket = io('https://leflux.ai', { transports: ['polling'] });
+socket.on('connect', () => socket.emit('join_session', sessionId));
 ```
 
-There is no token in the URL. The connection upgrade passes the visitor's browser `Origin`, which the server validates against the allowed-host list the same way as the REST endpoints.
+`join_session` takes a UUID string, not an object or a URL query parameter. Before joining, the server resolves the browser Origin through site authentication and checks that the session belongs to that site. Owner previews may supply their preview token through Socket.IO `auth.previewToken`.
+
+Keep session ids private. Origin identifies the hosting site in a browser; it is not a user login credential and can be supplied by non-browser clients.
+
+After a successful join, visitor events must target that session and the socket must still own its room. A newer join emits `session_taken_over` to the older socket and revokes its room membership.
 
 ## Client → server events
 
 | Event                    | Payload                                                                  |
 |--------------------------|--------------------------------------------------------------------------|
-| `join_session`           | `{ sessionId }`                                                          |
+| `join_session`           | `sessionId: string`                                                          |
 | `update_context`         | `{ sessionId, context }`                                                 |
 | `continue_task`          | `{ sessionId, context }`                                                 |
 | `action_complete`        | `{ sessionId, actionId, result: { success, elementId?, description, error? } }` |
@@ -28,7 +35,7 @@ There is no token in the URL. The connection upgrade passes the visitor's browse
 
 | Event                    | Payload                                                                 |
 |--------------------------|-------------------------------------------------------------------------|
-| `session_joined`         | `{ sessionId, restored, history }`                                      |
+| `session_joined`         | `{ sessionId, history }`                                      |
 | `message_chunk`          | `{ delta, streamId, chunkIndex }`                                       |
 | `message_done`           | `{ text, streamId }`                                                    |
 | `message`                | `{ text, isQuestion?, isError? }`                                       |
@@ -97,14 +104,10 @@ Sequence:
 
 See [Action types](/docs/api/actions/) for every valid `action.type` value.
 
-## Liveness semantics
+## Liveness and reconnect
 
-Transport-level ping/pong (about every 25s) detects dropped connections. There's no application-level `heartbeat` event today. Server-side session eviction triggers after 30 min of inactivity (no visitor messages OR action results). After eviction, the widget re-inits via `POST /api/session/init` on the next page load.
+Socket.IO handles transport ping/pong and reconnect backoff. The widget also emits `heartbeat` (`{ sessionId, tabVisible }`) and `visibility` (`{ sessionId, visible }`) for application presence.
 
-## Reconnect
+On reconnect the widget rejoins the session. `session_joined` returns conversation history; the HTTP messages endpoint recovers persisted messages missed during a gap. Arbitrary socket events and page actions are not automatically replayed.
 
-The connection uses exponential backoff to handle transient disconnects. Widget shows a brief "Reconnecting…" status if disconnect lasts >2s. On reconnect, the server replays any events the widget missed during the gap.
-
-## Bidirectional one-socket-per-session
-
-Server enforces a single socket per session room. If a second socket joins the same `sessionId`, the older socket gets kicked. Prevents duplicate event delivery in multi-tab scenarios.
+Only one socket owns a visitor session room. An evicted widget rejoins before its next send. See [Session persistence](/docs/features/sessions/) for recovery limits.

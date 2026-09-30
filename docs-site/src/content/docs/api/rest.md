@@ -15,8 +15,8 @@ Initialize a new visitor session. Called by `embed.js` on widget mount.
 
 ```json
 {
-  "siteHost": "acme.com",
-  "pageUrl": "https://acme.com/pricing"
+  "websiteUrl": "https://example.test/pricing",
+  "config": {}
 }
 ```
 
@@ -66,7 +66,7 @@ Send a visitor message. Asynchronous — response is `{messageId, status:"proces
 {
   "sessionId": "uuid",
   "message": "show me pricing",
-  "pageContext": {
+  "context": {
     "url": "https://acme.com/pricing",
     "title": "Pricing — Acme",
     "indexedElements": [
@@ -79,7 +79,7 @@ Send a visitor message. Asynchronous — response is `{messageId, status:"proces
 }
 ```
 
-Limits: `message` ≤ 5000 chars. `indexedElements` truncated server-side to 50.
+Limit: `message` ≤ 5000 characters. Send the widget’s current page context with each turn; element ids can change after rescanning.
 
 **Response 200**
 
@@ -92,7 +92,7 @@ Limits: `message` ≤ 5000 chars. `indexedElements` truncated server-side to 50.
 
 The actual LLM reply + actions arrive on the WebSocket as `message_chunk` / `message_done` / `action_plan` events.
 
-Rate limit: 30 requests per minute per session.
+Rate limit: 30 requests per minute per IP, with an additional per-session LLM token bucket.
 
 ## GET /api/session/:id
 
@@ -103,24 +103,26 @@ Restore an existing session. Used on widget re-mount (page reload, tab reopen).
 ```json
 {
   "sessionId": "uuid",
-  "exists": true,
-  "host": "acme.com",
+  "createdAt": 1779723850877,
+  "lastActivity": 1779723850877,
   "messageCount": 7,
-  "siteConfig": {... same as session/init},
-  "history": [
-    { "role": "user",      "content": "show pricing" },
-    { "role": "assistant", "content": "Here are the plans..." }
-  ]
+  "siteConfig": { "layout": "floating" }
 }
 ```
 
-**Response 404** when the session was server-evicted (past 30min idle).
+`siteConfig` uses the same shape as initialization and may be omitted in legacy mode. History is delivered on socket join or through the messages endpoint, not this metadata response.
+
+On a memory miss, the server attempts same-site Firestore recovery for state saved within 24 hours. **404** means no accessible recoverable session; malformed ids return **400**.
+
+## GET /api/session/:id/messages
+
+Fetch persisted messages newer than `since`, a timestamp in milliseconds. The widget uses this to recover messages after a disconnected socket or an offline period. This endpoint enforces site ownership.
 
 ## DELETE /api/session/:id
 
-Permanently delete a session. Used by visitors who want to clear their chat.
+Remove the active in-memory session belonging to the requesting site. This does not permanently erase persisted conversation records.
 
-**Response 200** — `{ deleted: true }`.
+**Response 200** — `{ "success": true }`.
 
 ## GET /api/stats
 

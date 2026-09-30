@@ -4,9 +4,8 @@
 // "/" is host-relative, so it works on both dev.leflux.ai and leflux.ai.
 import { logos } from 'virtual:starlight/user-images';
 import config from 'virtual:starlight/user-config';
-import type { Props } from '@astrojs/starlight/props';
 
-const { siteTitle } = Astro.props;
+const { siteTitle } = Astro.locals.starlightRoute;
 const href = '/';
 ---
 
