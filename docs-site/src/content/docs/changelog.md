@@ -15,6 +15,13 @@ Reverse chronological. Dates are the date the change landed in production.
 
 
 
+
+## 2026-10-10
+
+### Widget
+
+- **Better Answers for Products**: The widget now gives more accurate answers about your products, especially for detailed or deeply nested product pages on your site.
+
 ## 2026-09-30
 
 ### Landing
