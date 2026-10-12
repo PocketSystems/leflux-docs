@@ -25,6 +25,10 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Grounded collection choices**: Your 'Try Widget' now correctly shows all available grounded collections.
 - **Better Choices**: See more options after you've browsed through your collection.
 
+### Landing
+
+- **New OG Image**: The social media preview for our landing page now matches our current design.
+
 ## 2026-10-10
 
 ### Widget
