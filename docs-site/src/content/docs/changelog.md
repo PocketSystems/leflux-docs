@@ -23,6 +23,7 @@ Reverse chronological. Dates are the date the change landed in production.
 
 - **Branded 'Try Widget'**: The 'Try Widget' now matches your site's branding for a consistent look.
 - **Grounded collection choices**: Your 'Try Widget' now correctly shows all available grounded collections.
+- **Better Choices**: See more options after you've browsed through your collection.
 
 ## 2026-10-10
 
