@@ -16,6 +16,13 @@ Reverse chronological. Dates are the date the change landed in production.
 
 
 
+
+## 2026-10-12
+
+### Widget
+
+- **Branded 'Try Widget'**: The 'Try Widget' now matches your site's branding for a consistent look.
+
 ## 2026-10-10
 
 ### Widget
