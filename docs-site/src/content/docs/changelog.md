@@ -35,6 +35,8 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Better first loads**: The widget will now retry loading a page if it encounters a rare first-time loading issue.
 - **Accurate message count**: Your visitors' message counts in the demo widget will now correctly reflect their usage even if their session expires and restarts.
 - **Links in a list**: appear inline as part of the list item, not as separate blocks.
+- **Daily chat limit**: We added a daily message limit per visitor to prevent abuse.
+- **Improved moderation**: We improved our moderation systems to catch inappropriate content more effectively.
 ### Dashboard
 
 - **Security**: Sensitive information is now protected when an admin is viewing another workspace.
@@ -56,7 +58,9 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Links**: Page links with special characters are now correctly formatted.
 - **Security**: Ensures only safe web page URLs are stored and displayed.
 
+### Onboarding
 
+- **Domain verification**: We added a step to verify your website domain when you create a new account.
 
 ## 2026-10-12
 
