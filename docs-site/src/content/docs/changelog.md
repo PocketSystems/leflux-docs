@@ -37,6 +37,7 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Links in a list**: appear inline as part of the list item, not as separate blocks.
 - **Daily chat limit**: We added a daily message limit per visitor to prevent abuse.
 - **Improved moderation**: We improved our moderation systems to catch inappropriate content more effectively.
+- **Improved color handling**: The widget now correctly picks up more of your site's color styles for a better look.
 ### Dashboard
 
 - **Security**: Sensitive information is now protected when an admin is viewing another workspace.
@@ -61,6 +62,7 @@ Reverse chronological. Dates are the date the change landed in production.
 ### Onboarding
 
 - **Domain verification**: We added a step to verify your website domain when you create a new account.
+
 
 ## 2026-10-12
 
