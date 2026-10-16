@@ -17,6 +17,43 @@ Reverse chronological. Dates are the date the change landed in production.
 
 
 
+
+## 2026-10-16
+
+### Widget
+
+- **Security**: Blocks harmful links in chat replies from running in your browser.
+- **Replies**: Your chat widget now shows nested lists correctly and keeps links whole.
+- **Contact**: Email addresses, phone numbers, and web links in replies are now clickable.
+- **Clarity**: Message bubbles and list items automatically adjust for right-to-left languages.
+- **Reliability**: Chat chips no longer lose your message draft if the bot is busy.
+- **Navigation**: Links in chat replies to your own site now navigate smoothly without reloading the page.
+- **Links**: External links in chat replies will open in a new tab when you use modifier keys.
+- **Confirmation**: The widget now understands natural 'yes' and 'no' responses for confirmations.
+- **Navigation**: Clicking a button or link to the current page no longer reloads it unnecessarily.
+- **Security**: Your site's cart contents are now checked for accuracy when the bot quotes prices.
+
+### Dashboard
+
+- **Security**: Sensitive information is now protected when an admin is viewing another workspace.
+- **Plans**: You can now switch plans directly from the billing portal.
+- **Transcript**: The chat transcript now renders links and formatting consistently and correctly.
+- **Lists**: Paginated lists in the dashboard are now free of gaps and duplicates.
+- **Billing**: Subscription statuses are more accurate and prevent duplicate billing.
+- **Live Status**: The dashboard now reliably shows when a visitor is live on your site.
+- **Activity**: Overview and Analytics now use consistent daily visitor and message counts.
+- **Customization**: Your brand color is saved only when you manually enter it, preserving automatic detection.
+- **Reliability**: Dashboard pages now show a retry state when content fails to load instead of an empty list.
+- **Presence**: Visitor presence is now consistently calculated across all dashboard views.
+- **Transcript**: Chat transcripts now have clear day dividers and show exact times on hover.
+- **Billing**: Billing and scan pages now correctly show errors when data cannot be read.
+
+### Server
+
+- **Security**: Prevents malicious URLs from being used in UI blocks.
+- **Links**: Page links with special characters are now correctly formatted.
+- **Security**: Ensures only safe web page URLs are stored and displayed.
+
 ## 2026-10-12
 
 ### Widget
