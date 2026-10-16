@@ -32,7 +32,8 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Confirmation**: The widget now understands natural 'yes' and 'no' responses for confirmations.
 - **Navigation**: Clicking a button or link to the current page no longer reloads it unnecessarily.
 - **Security**: Your site's cart contents are now checked for accuracy when the bot quotes prices.
-
+- **Better first loads**: The widget will now retry loading a page if it encounters a rare first-time loading issue.
+- **Accurate message count**: Your visitors' message counts in the demo widget will now correctly reflect their usage even if their session expires and restarts.
 ### Dashboard
 
 - **Security**: Sensitive information is now protected when an admin is viewing another workspace.
@@ -53,6 +54,7 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Security**: Prevents malicious URLs from being used in UI blocks.
 - **Links**: Page links with special characters are now correctly formatted.
 - **Security**: Ensures only safe web page URLs are stored and displayed.
+
 
 ## 2026-10-12
 
