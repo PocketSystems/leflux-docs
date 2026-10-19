@@ -18,6 +18,16 @@ Reverse chronological. Dates are the date the change landed in production.
 
 
 
+
+## 2026-10-20
+
+### Landing
+
+- **New Hero Section**: We've redesigned our main page to feature a live demonstration of LeFlux in action on real websites.
+- **Interactive Demo**: Our new demo shows how LeFlux works on various customer sites, responding to common user questions.
+- **Real Customer Examples**: The demo now showcases actual LeFlux customer websites, highlighting how the widget enhances their user experience.
+- **Explore Live Sites**: Each demo card links directly to the real customer website, allowing you to see LeFlux in its natural environment.
+
 ## 2026-10-16
 
 ### Widget
