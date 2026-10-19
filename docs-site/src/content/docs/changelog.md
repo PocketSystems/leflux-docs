@@ -28,6 +28,7 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Real Customer Examples**: The demo now showcases actual LeFlux customer websites, highlighting how the widget enhances their user experience.
 - **Explore Live Sites**: Each demo card links directly to the real customer website, allowing you to see LeFlux in its natural environment.
 - **Wider Previews**: We improved the display of website previews to better showcase your site's design.
+- **Ring animation**: makes the animation of our front card smoother.
 
 ## 2026-10-16
 
