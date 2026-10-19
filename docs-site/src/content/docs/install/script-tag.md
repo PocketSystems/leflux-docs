@@ -3,7 +3,7 @@ title: Script tag — works on any site
 description: Install LeFlux on a plain HTML or static website with one async script, check allowed hosts, and verify the chat widget appears.
 ---
 
-The universal install. Copy one tag into your HTML and you're done.
+Use this script after you have added your site and its allowed hosts in the LeFlux dashboard. You can place it in plain HTML or in a site builder that supports custom scripts.
 
 ## The snippet
 
@@ -11,9 +11,9 @@ The universal install. Copy one tag into your HTML and you're done.
 <script src="https://leflux.ai/embed.js" async></script>
 ```
 
-That's it. No tokens, no keys, no configuration.
+The HTML snippet does not contain a public token or API key. Your site's dashboard configuration is still required before the widget can load.
 
-Why this works without a token: browsers won't let JavaScript forge a cross-origin `Origin` header. The LeFlux server reads `Origin` on the `/api/session/init` call and matches it against the **Allowed hosts** list you configure in the dashboard. Tokens in embed snippets are public anyway (anyone viewing source can see them) so they'd add no real security — `Origin` does the same job with zero-config UX.
+The browser sends an `Origin` header on the `/api/session/init` request. LeFlux checks it against the **Allowed hosts** list configured for your site. If the host has not been registered, the widget will not initialize.
 
 The `async` attribute is recommended so the script loads without blocking your page render.
 
