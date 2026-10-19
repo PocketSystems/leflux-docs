@@ -5,35 +5,34 @@
 <h1 align="center">LeFlux Docs</h1>
 
 <p align="center">
-  <strong>Give your website hands.</strong><br>
-  An AI agent for any website, not just a chatbot. It answers your visitors, opens the right page, fills the form, and books the meeting, automatically. One line of code.
+  <strong>Your visitors ask. LeFlux does.</strong><br>
+  Add AI chat to your website to answer from your public pages, guide visitors to the right page, assist with forms, and connect them with your team.
 </p>
 
 <p align="center">
-  <a href="https://leflux.xrlabs.app">Website</a> ·
-  <a href="https://leflux.xrlabs.app/docs">Documentation</a> ·
+  <a href="https://leflux.ai/">Website</a> ·
+  <a href="https://leflux.ai/docs/">Documentation</a> ·
   <a href="https://github.com/PocketSystems/leflux-docs/issues">Report an issue</a>
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/install-one%20line-ee5a30?style=for-the-badge" alt="One line install">
-  <img src="https://img.shields.io/badge/setup-zero%20config-ee5a30?style=for-the-badge" alt="Zero config">
-  <img src="https://img.shields.io/badge/price-%240%20to%20start-ee5a30?style=for-the-badge" alt="Free to start">
+  <img src="https://img.shields.io/badge/setup-dashboard%20guided-ee5a30?style=for-the-badge" alt="Dashboard guided setup">
 </p>
 
 ---
 
 ## What is LeFlux?
 
-LeFlux is a JavaScript widget you drop onto any website. Visitors chat in natural language, and the agent actually does the work: it reads the page, navigates to where the answer lives, fills forms, opens modals, and answers from a knowledge base built by crawling your site.
+LeFlux is a JavaScript widget you add to your website. Visitors chat in natural language. The agent uses your site's public pages to answer questions, helps visitors navigate, assists with supported forms, and can hand a conversation to your team.
 
-Not a chatbot that replies. An AI agent that acts.
+Add your site in the dashboard, then install the widget:
 
 ```html
-<script src="https://leflux.xrlabs.app/embed.js" async></script>
+<script src="https://leflux.ai/embed.js" async></script>
 ```
 
-That is the whole integration. No tokens, no keys, no config. The script auto-detects your site, fetches your per-tenant config, and mounts in a shadow DOM so it never collides with your CSS.
+The script does not need a public API key. Your domain and allowed hosts must be configured in the dashboard first. See the [installation and testing guide](https://leflux.ai/docs/guides/ai-chat-for-website/).
 
 ## Works on every platform
 
@@ -51,7 +50,7 @@ Same one line, whatever you built with.
 ![Astro](https://img.shields.io/badge/Astro-BC52EE?style=flat-square&logo=astro&logoColor=white)
 ![Vue](https://img.shields.io/badge/Vue%20%2F%20Nuxt-42B883?style=flat-square&logo=vuedotjs&logoColor=white)
 
-Plus any custom stack. There is an install guide for each in the [docs](https://leflux.xrlabs.app/docs).
+Plus any custom stack. Find the install guides in the [docs](https://leflux.ai/docs/).
 
 ## What it does
 
@@ -64,7 +63,7 @@ Plus any custom stack. There is an install guide for each in the [docs](https://
 
 ## This repository
 
-This is the source for the LeFlux documentation site, served live at **[leflux.xrlabs.app/docs](https://leflux.xrlabs.app/docs)**. It is built with [Astro Starlight](https://starlight.astro.build).
+This is the source for the LeFlux documentation site, served live at **[leflux.ai/docs](https://leflux.ai/docs/)**. It is built with [Astro Starlight](https://starlight.astro.build).
 
 ### Local development
 
@@ -85,5 +84,5 @@ That is the right place for anything LeFlux related: docs fixes, widget bugs, in
 ---
 
 <p align="center">
-  <a href="https://leflux.xrlabs.app">leflux.xrlabs.app</a>
+  <a href="https://leflux.ai/">leflux.ai</a>
 </p>

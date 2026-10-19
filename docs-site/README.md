@@ -1,6 +1,6 @@
 # LeFlux Docs
 
-Static documentation site served at https://leflux.xrlabs.app/docs/.
+Static documentation site served at https://leflux.ai/docs/.
 
 Built with [Astro](https://astro.build/) + [Starlight](https://starlight.astro.build/).
 
@@ -75,10 +75,10 @@ No manual deploy step. Edits land live within ~2 minutes of push.
 
 ## Theme
 
-Brand purple (`#a855f7` family) applied via `src/styles/custom.css`. Overrides Starlight's default `--sl-color-accent` plus header backdrop blur + sidebar active-item accent.
+The LeFlux orange brand theme is applied via `src/styles/custom.css`. It overrides Starlight's accent colors and styles the header and active sidebar item.
 
 Dark + light mode automatic via Starlight's built-in theme switcher (top right).
 
 ## Search
 
-Powered by [Pagefind](https://pagefind.app/) — generated at build time, indexed across all 40+ docs. The search modal opens via `Cmd-K` / `Ctrl-K`.
+Powered by [Pagefind](https://pagefind.app/) — generated at build time across the docs. The search modal opens via `Cmd-K` / `Ctrl-K`.

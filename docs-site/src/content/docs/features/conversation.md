@@ -1,6 +1,6 @@
 ---
 title: AI conversation
-description: How the conversational layer works and how to think about it.
+description: Understand how LeFlux uses visitor messages, live page context, crawled site knowledge, streamed replies, and browser actions.
 ---
 
 The agent is powered by a fast frontier LLM. Visitor messages flow through:

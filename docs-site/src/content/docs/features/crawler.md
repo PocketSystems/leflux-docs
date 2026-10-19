@@ -1,6 +1,6 @@
 ---
 title: Site crawler & knowledge base
-description: How LeFlux builds the knowledge graph that powers inline answers.
+description: See how LeFlux crawls public website pages, inspect the extracted knowledge, and refresh answers when your site content changes.
 ---
 
 Our crawler runs against your site to build the knowledge base that lets the agent answer factual questions inline without navigating the visitor anywhere.
@@ -9,8 +9,9 @@ Our crawler runs against your site to build the knowledge base that lets the age
 
 - **Manual** — Dashboard → Site detail → **Start crawl** (recommended after content updates).
 - **On install** — the first crawl is auto-triggered when you add a site.
+- **Scheduled** — a background scheduler checks for sites whose last crawl is around a week old. It processes one crawl at a time, so the next run may happen later on a busy system.
 
-Scheduled recurring crawls are on the roadmap; today you re-run manually when your content changes.
+For a time-sensitive correction, run a manual crawl instead of waiting for the scheduler.
 
 ## What it does
 
@@ -81,7 +82,7 @@ For info questions ("what's your phone number?", "what does plan X include?", "s
 
 Site detail → **Site Scan** lists every crawled page with its title, URL, and a preview of the extracted text. Open one to see the full body text + headings + links — exactly what the LLM sees.
 
-If a question isn't being answered well, check whether the source page is crawled with the relevant content. Often the fix is a re-crawl after a content update, or expanding the page cap if your site has more than 60 pages worth of useful content.
+If a question isn't being answered well, check whether the source page is crawled with the relevant content. Often the fix is a re-crawl after a content update, or a plan with a larger page cap if useful pages exceed your current limit.
 
 ## Privacy
 
