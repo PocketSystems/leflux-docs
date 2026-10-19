@@ -1,6 +1,6 @@
 ---
 title: Script tag — works on any site
-description: One-line install. Plain HTML, static sites, anything with a <script> tag.
+description: Install LeFlux on a plain HTML or static website with one async script, check allowed hosts, and verify the chat widget appears.
 ---
 
 The universal install. Copy one tag into your HTML and you're done.

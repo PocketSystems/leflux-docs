@@ -1,6 +1,6 @@
 ---
 title: Introduction
-description: What LeFlux is, what it's for, and how it fits into any site.
+description: Learn what the LeFlux AI website assistant does, how it uses public site knowledge, and where to start with installation and testing.
 ---
 
 LeFlux is a self-contained AI chat widget for the web. Drop one script tag on your site and visitors get a natural-language assistant that can read the current page, navigate across pages, fill out forms, and answer questions from a knowledge base built by crawling your site.
@@ -31,4 +31,4 @@ LeFlux is a self-contained AI chat widget for the web. Drop one script tag on yo
 
 ## Next step
 
-Get a working install in under five minutes. See [Quick start](/docs/getting-started/quick-start/).
+Follow the [quick start](/docs/getting-started/quick-start/) for dashboard setup, or use the [AI chat for your website guide](/docs/guides/ai-chat-for-website/) for an installation and testing checklist.

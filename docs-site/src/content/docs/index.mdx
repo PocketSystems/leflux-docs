@@ -1,9 +1,9 @@
 ---
-title: LeFlux · Your visitors ask, LeFlux does
-description: An AI agent for any website, not just a chatbot. It reads the page, navigates, fills forms, and books meetings. Universal indexing, knowledge-base aware, multi-language, zero framework lock-in.
+title: LeFlux Docs — AI Chat Widget Setup and Guides
+description: Install LeFlux AI chat on your website, connect public pages, test answers and forms, and set up human support with step-by-step guides.
 template: splash
 hero:
-  tagline: An AI agent that reads, navigates, fills forms, and acts on any website, not a chatbot that just replies. Universal indexing, knowledge-base aware, multi-language, zero framework lock-in.
+  tagline: Install the widget, connect your site's knowledge, and test answers, navigation, forms, and human support.
   image:
     file: ../../assets/logo-clean.png
   actions:
@@ -26,9 +26,9 @@ import Platforms from '../../components/Platforms.astro';
 
 ## What is LeFlux?
 
-LeFlux is a JavaScript widget you drop onto any website. Visitors chat in natural language. The agent reads the page, navigates to where the answer lives, fills forms, opens modals, and answers questions from a knowledge base built by crawling your site.
+LeFlux is a JavaScript widget you add to your website. Visitors chat in natural language. The agent can answer from your site's public pages, help them navigate, and assist with supported forms. When a visitor needs a person, your team can take over the conversation.
 
-One `<script>` tag. Works on plain HTML, React, Next.js, WordPress, Shopify, Webflow, Framer, anything. No framework lock-in, no styling work, no per-page configuration.
+After you add your site in the dashboard, install one `<script>` tag. LeFlux works with plain HTML, React, Next.js, WordPress, Shopify, Webflow, Framer, and other sites that allow custom scripts.
 
 <CardGrid>
   <Card title="Universal indexing" icon="puzzle">
@@ -44,26 +44,41 @@ One `<script>` tag. Works on plain HTML, React, Next.js, WordPress, Shopify, Web
     Click, type, scroll, navigate, select — five atomic primitives compose into multi-step workflows. SPA-aware (Next.js Link, React Router) so client-side state survives.
   </Card>
   <Card title="Form auto-fill" icon="pencil">
-    Detects required fields, asks the visitor for missing values one at a time, then fills + submits in a single atomic sequence. No half-submitted forms.
+    Helps collect missing details and fill supported forms. Test submission and confirmation on your own site before launch.
   </Card>
   <Card title="Three layouts" icon="setting">
     Floating bubble, bottom-bar pill, dockable side panel — set the default per-site, or let visitors switch from the chat header (lock it if you'd rather not). Always floating on mobile. Live theme follows your brand color.
   </Card>
 </CardGrid>
 
-## Install in 30 seconds
+## Add the widget with one script
 
 ```html
 <script src="https://leflux.ai/embed.js" async></script>
 ```
 
-That's the whole integration. No tokens, no keys, no config. The script auto-detects your site via the browser's Origin header, fetches the per-tenant config (theme, layout, greeting, allowed hosts), and mounts the widget in a shadow DOM so it can't collide with your CSS.
+The script does not need a token or API key in the page. First, add your site and allowed host in the dashboard; then paste the script. The widget loads your site's settings and mounts inside a shadow DOM to avoid common CSS conflicts.
 
 ## Works on every platform
 
 Same one line, whatever you built with. We have a guide for each.
 
 <Platforms />
+
+## Solve a visitor problem
+
+<CardGrid>
+  <LinkCard
+    title="Add AI chat to your website"
+    href="/docs/guides/ai-chat-for-website/"
+    description="Install the widget, connect public pages, and test real visitor questions."
+  />
+  <LinkCard
+    title="Set up AI customer support"
+    href="/docs/guides/ai-customer-support-assistant/"
+    description="Use site knowledge for answers and test a handoff to your team."
+  />
+</CardGrid>
 
 <CardGrid>
   <LinkCard

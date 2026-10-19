@@ -1,6 +1,6 @@
 ---
 title: REST endpoints
-description: HTTP API exposed by the LeFlux server.
+description: Reference the LeFlux REST API endpoints, authentication requirements, request fields, and response examples for integrations.
 ---
 
 Base URL: `https://leflux.ai/api`.

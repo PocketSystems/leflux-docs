@@ -8,14 +8,15 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
   site: 'https://leflux.ai',
   base: '/docs',
-  trailingSlash: 'ignore',
+  // Keep canonical URLs in step with the deployed directory routes and sitemap.
+  trailingSlash: 'always',
   build: {
     format: 'directory',
   },
   integrations: [
     starlight({
       title: 'LeFlux',
-      description: 'Your visitors ask, LeFlux does. Developer docs for the LeFlux AI agent that answers visitors, opens the right page, fills forms, and books meetings. Install, configure, and extend in one line of code.',
+      description: 'LeFlux docs: install AI chat on your website, connect public pages, configure the widget, and test answers, forms, and human support.',
       logo: {
         src: './src/assets/logo-clean.png',
         replacesTitle: false,
@@ -123,6 +124,13 @@ export default defineConfig({
             { label: 'Introduction',  link: '/getting-started/introduction/' },
             { label: 'Quick start',   link: '/getting-started/quick-start/' },
             { label: 'How it works',  link: '/getting-started/how-it-works/' },
+          ],
+        },
+        {
+          label: 'Practical Guides',
+          items: [
+            { label: 'AI chat for your website', link: '/guides/ai-chat-for-website/' },
+            { label: 'AI customer support assistant', link: '/guides/ai-customer-support-assistant/' },
           ],
         },
         {

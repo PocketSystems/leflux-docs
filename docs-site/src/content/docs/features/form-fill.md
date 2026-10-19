@@ -1,6 +1,6 @@
 ---
 title: Form auto-fill
-description: How the agent fills out forms safely.
+description: Learn how LeFlux helps visitors complete supported website forms, asks for missing details, and checks the result before reporting success.
 ---
 
 The agent can fill out any form on your site — contact forms, signup, project inquiry, checkout. The flow is deliberately conservative to avoid half-submitted forms.
