@@ -31,6 +31,11 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Ring animation**: makes the animation of our front card smoother.
 - **New Landing Page**: Discover a new landing page showcasing the power of AI Chat.
 
+### Widget
+
+- **Layout Reliability**: Your widget's layout will now stay exactly as you designed it, regardless of your other settings or where it's embedded.
+- **Preview Protection**: Unsaved changes to your widget's layout won't accidentally show up or be saved in your browser history.
+
 ## 2026-10-16
 
 ### Widget
