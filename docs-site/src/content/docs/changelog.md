@@ -35,6 +35,7 @@ Reverse chronological. Dates are the date the change landed in production.
 
 - **Layout Reliability**: Your widget's layout will now stay exactly as you designed it, regardless of your other settings or where it's embedded.
 - **Preview Protection**: Unsaved changes to your widget's layout won't accidentally show up or be saved in your browser history.
+- **Smarter welcome suggestions**: The widget now uses your site's content to suggest relevant conversation starters.
 
 ## 2026-10-16
 
