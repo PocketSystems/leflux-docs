@@ -29,6 +29,7 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Explore Live Sites**: Each demo card links directly to the real customer website, allowing you to see LeFlux in its natural environment.
 - **Wider Previews**: We improved the display of website previews to better showcase your site's design.
 - **Ring animation**: makes the animation of our front card smoother.
+- **New Landing Page**: Discover a new landing page showcasing the power of AI Chat.
 
 ## 2026-10-16
 
