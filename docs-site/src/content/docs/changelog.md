@@ -37,6 +37,10 @@ Reverse chronological. Dates are the date the change landed in production.
 - **Preview Protection**: Unsaved changes to your widget's layout won't accidentally show up or be saved in your browser history.
 - **Smarter welcome suggestions**: The widget now uses your site's content to suggest relevant conversation starters.
 
+### Dashboard
+
+- **Dashboard Settings**: Fixes an issue where settings for some sites could not be saved.
+
 ## 2026-10-16
 
 ### Widget
