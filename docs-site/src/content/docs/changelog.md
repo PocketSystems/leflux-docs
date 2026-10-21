@@ -19,6 +19,13 @@ Reverse chronological. Dates are the date the change landed in production.
 
 
 
+
+## 2026-10-21
+
+### Server
+
+- **Credit alerts**: You'll now get an email when your OpenRouter credit balance is running low, helping you avoid service interruptions.
+
 ## 2026-10-20
 
 ### Landing
