@@ -26,6 +26,15 @@ Reverse chronological. Dates are the date the change landed in production.
 
 - **Credit alerts**: You'll now get an email when your OpenRouter credit balance is running low, helping you avoid service interruptions.
 
+### Widget
+
+- **Color Matching**: The widget's own settings panel now uses colors that are easy to read against your site's background.
+
+### Dashboard
+
+- **Color Matching**: The dashboard now warns you if your chosen widget accent color clashes with your site's brand, and lets you easily revert to your site's color.
+- **Color Input**: Three-digit hex color codes are now correctly saved as six-digit codes.
+
 ## 2026-10-20
 
 ### Landing
