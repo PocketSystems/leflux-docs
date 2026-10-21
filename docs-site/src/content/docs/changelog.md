@@ -20,6 +20,18 @@ Reverse chronological. Dates are the date the change landed in production.
 
 
 
+
+## 2026-10-22
+
+### Widget
+
+- **Multilingual replies**: Answers now appear reliably, even when the response is fully received at once.
+- **Better language detection**: The widget now accurately identifies more languages, ensuring replies are in the correct language, especially for those with similar characters.
+- **Smarter section buttons**: Buttons to scroll within the page are now correctly named after their target heading, making their purpose clearer.
+- **Always-working section buttons**: Buttons that point to sections on your page are more reliable and always lead to a valid destination.
+- **Enhanced section navigation**: The widget is better at finding relevant page sections, even when headings are phrased differently or include special characters.
+- **Improved button reliability**: Buttons no longer silently fail or send you to the top of the page when they can't find their target.
+
 ## 2026-10-21
 
 ### Server
