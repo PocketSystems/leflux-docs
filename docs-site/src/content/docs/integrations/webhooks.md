@@ -94,7 +94,9 @@ Each request has these headers:
 | `webhook-id` | The event id. The same on every retry of the same event. |
 | `webhook-timestamp` | When this attempt was sent, in Unix seconds. |
 | `webhook-signature` | `v1,` followed by the base64 HMAC-SHA256 of `{webhook-id}.{webhook-timestamp}.{body}`. |
-| `X-LeFlux-Event` | The event type, for routing before you parse the body. |
+| `X-LeFlux-Event` | The event type, for logging and quick routing. |
+
+`X-LeFlux-Event` is not covered by the signature. Verify first, then act on the `type` inside the signed body.
 
 **Node**
 
