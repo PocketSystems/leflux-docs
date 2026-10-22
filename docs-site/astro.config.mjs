@@ -172,6 +172,12 @@ export default defineConfig({
           ],
         },
         {
+          label: 'Integrations',
+          items: [
+            { label: 'Webhooks', link: '/integrations/webhooks/' },
+          ],
+        },
+        {
           label: 'Advanced',
           items: [
             { label: 'Programmatic API', link: '/advanced/programmatic-api/' },
